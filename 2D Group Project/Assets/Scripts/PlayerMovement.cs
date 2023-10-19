@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
@@ -11,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb2d;
 
     public Transform feet;
+    public Transform RightArm;
+    public Transform LeftArm;
     public float DistanceFromFeet = 0.1f;
     //This boolean is equal to whether the player is touching the ground or not.
     public bool grounded;
@@ -27,8 +30,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Run();
-        RaycastHit2D _hit = Physics2D.Raycast(feet.position, Vector2.down);
-        grounded = _hit.distance <= DistanceFromFeet;
+        RaycastHit2D _hit = Physics2D.Raycast(feet.position, Vector2.down, DistanceFromFeet , 3);
+        RaycastHit2D leftArm = Physics2D.Raycast(LeftArm.position, Vector2.left, DistanceFromFeet, 3);
+        RaycastHit2D rightArm = Physics2D.Raycast(RightArm.position, Vector2.right, DistanceFromFeet, 3);
+        grounded = _hit || leftArm || rightArm;
     }
 
     void OnMove(InputValue value)
