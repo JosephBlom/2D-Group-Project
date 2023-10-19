@@ -17,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
     public float DistanceFromFeet = 0.1f;
     //This boolean is equal to whether the player is touching the ground or not.
     public bool grounded;
+    //This boolean is if the player is touching a wall
+    public bool sided;
+
+    public int MaxJumps = 3;
+    public int Jumps;
 
     [SerializeField] int moveSpeed = 5;
     [SerializeField] int jumpSpeed = 5;
@@ -33,7 +38,12 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D _hit = Physics2D.Raycast(feet.position, Vector2.down, DistanceFromFeet , 3);
         RaycastHit2D leftArm = Physics2D.Raycast(LeftArm.position, Vector2.left, DistanceFromFeet, 3);
         RaycastHit2D rightArm = Physics2D.Raycast(RightArm.position, Vector2.right, DistanceFromFeet, 3);
-        grounded = _hit || leftArm || rightArm;
+        grounded = _hit;
+        sided = leftArm || rightArm;
+        if (grounded)
+        {
+            Jumps = MaxJumps;
+        }
     }
 
     void OnMove(InputValue value)
@@ -43,6 +53,12 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
+        if (sided && Jumps > 0)
+        {
+            Jumps--;
+            rb2d.velocity += new Vector2(0f, jumpSpeed);
+            return;
+        }
         if (grounded)
         {
             rb2d.velocity += new Vector2(0f, jumpSpeed);
