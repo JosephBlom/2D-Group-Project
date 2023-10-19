@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] int moveSpeed = 5;
     [SerializeField] int jumpSpeed = 5;
+    [SerializeField] int wallJumpSpeed = 25;
 
     void Start()
     {
