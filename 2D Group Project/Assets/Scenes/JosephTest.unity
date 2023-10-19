@@ -409,8 +409,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1906936997}
-  chaseDistance: 2
-  moveSpeed: 5
+  chaseSpeed: 2
+  chaseTriggerDistance: 5
+  paceDirection: {x: 0, y: 0, z: 0}
+  paceDistance: 3
 --- !u!212 &2049865655
 SpriteRenderer:
   m_ObjectHideFlags: 0
