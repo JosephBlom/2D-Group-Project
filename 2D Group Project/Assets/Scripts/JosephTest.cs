@@ -1,44 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class JosephTest : MonoBehaviour
 {
+    Vector2 moveInput;
+    Rigidbody2D rb2d;
+
+    [SerializeField] int moveSpeed = 5;
+    [SerializeField] int jumpSpeed = 5;
+
+
     void Start()
     {
-        GetComponent<Canvas>().enabled = false;
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1)
-        {
-            Time.timeScale = 0;
-            GetComponent<Canvas>().enabled = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 0)
-        {
-            Resume();
-        }
-
+        Run();
     }
 
-    public void Resume()
+    void OnMove(InputValue value)
     {
-        Time.timeScale = 1;
-        GetComponent<Canvas>().enabled = false;
-    }   
-
-    public void ExitGame()
-    {
-        Application.Quit();
+        moveInput = value.Get<Vector2>();
     }
 
-    public void LoadMainMenu()
+    void OnJump(InputValue value)
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("MainMenu");
+        rb2d.velocity += new Vector2(0f, jumpSpeed);
+    }
+
+    void Run()
+    {
+        Vector2 playerVelocity = new Vector2(moveInput.x * moveSpeed, rb2d.velocity.y);
+        rb2d.velocity = playerVelocity;
     }
 }
