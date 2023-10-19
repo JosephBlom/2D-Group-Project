@@ -197,12 +197,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   feet: {fileID: 2634913555213472900}
-  RightArm: {fileID: 6339547565811011829}
-  LeftArm: {fileID: 5396925498550498610}
   DistanceFromFeet: 0.1
   grounded: 0
-  moveSpeed: 5
-  jumpSpeed: 10
+  moveSpeed: 10
+  jumpSpeed: 15
 --- !u!50 &3421756003899589051
 Rigidbody2D:
   serializedVersion: 4
@@ -218,7 +216,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
