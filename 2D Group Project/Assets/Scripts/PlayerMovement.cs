@@ -10,6 +10,11 @@ public class PlayerMovement : MonoBehaviour
     Vector2 moveInput;
     Rigidbody2D rb2d;
 
+    public Transform feet;
+    public float DistanceFromFeet = 0.1f;
+    //This boolean is equal to whether the player is touching the ground or not.
+    public bool grounded;
+
     [SerializeField] int moveSpeed = 5;
     [SerializeField] int jumpSpeed = 5;
 
@@ -22,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Run();
+        RaycastHit2D _hit = Physics2D.Raycast(feet.position, Vector2.down);
+        grounded = _hit.distance <= DistanceFromFeet;
     }
 
     void OnMove(InputValue value)
@@ -31,7 +38,10 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        rb2d.velocity += new Vector2(0f, jumpSpeed);
+        if (grounded)
+        {
+            rb2d.velocity += new Vector2(0f, jumpSpeed);
+        }
     }
 
     void Run()
