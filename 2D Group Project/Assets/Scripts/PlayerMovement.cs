@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Run();
+        flipSprite();
         RaycastHit2D _hit = Physics2D.Raycast(feet.position, Vector2.down, DistanceFromFeet , 3);
         RaycastHit2D leftArm = Physics2D.Raycast(LeftArm.position, Vector2.left, DistanceFromFeet, 3);
         RaycastHit2D rightArm = Physics2D.Raycast(RightArm.position, Vector2.right, DistanceFromFeet, 3);
@@ -69,5 +70,15 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 playerVelocity = new Vector2(moveInput.x * moveSpeed, rb2d.velocity.y);
         rb2d.velocity = playerVelocity;
+    }
+
+    void flipSprite()
+    {
+        bool playerHaseHorizontalSpeed = Mathf.Abs(rb2d.velocity.x) > Mathf.Epsilon;
+
+        if (playerHaseHorizontalSpeed)
+        {
+            transform.localScale = new Vector2(-Mathf.Sign(rb2d.velocity.x), 1f);
+        }
     }
 }
