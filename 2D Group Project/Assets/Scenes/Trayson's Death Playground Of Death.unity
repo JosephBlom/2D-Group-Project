@@ -197,18 +197,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6514080810518516043, guid: b44d0ceb91ef621498fc880ef301b5ea, type: 3}
-      propertyPath: Debuggers.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6514080810518516043, guid: b44d0ceb91ef621498fc880ef301b5ea, type: 3}
-      propertyPath: Debuggers.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6514080810518516043, guid: b44d0ceb91ef621498fc880ef301b5ea, type: 3}
-      propertyPath: Debuggers.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7812753621296975659, guid: b44d0ceb91ef621498fc880ef301b5ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
