@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2450305535186184188}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0, z: 0}
+  m_LocalPosition: {x: 0.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 4172576177562735065}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6, y: 0, z: 0}
+  m_LocalPosition: {x: -0.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -201,8 +201,11 @@ MonoBehaviour:
   LeftArm: {fileID: 6339547565811011829}
   DistanceFromFeet: 0.1
   grounded: 0
+  sided: 0
+  MaxJumps: 3
+  Jumps: 0
   moveSpeed: 10
-  jumpSpeed: 15
+  jumpSpeed: 10
 --- !u!50 &3421756003899589051
 Rigidbody2D:
   serializedVersion: 4
@@ -218,7 +221,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] int moveSpeed = 5;
     [SerializeField] int jumpSpeed = 5;
 
-
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
