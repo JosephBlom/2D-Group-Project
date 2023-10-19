@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 42551259}
   - component: {fileID: 42551258}
   - component: {fileID: 42551263}
-  - component: {fileID: 42551262}
+  - component: {fileID: 42551264}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -283,20 +283,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &42551262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 42551257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5d04f9e7d1226741b3c2a31f069d085, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpSpeed: 5
 --- !u!114 &42551263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +313,20 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &42551264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42551257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 622ce2d793b301846bbf68a59df030d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  jumpSpeed: 5
 --- !u!1 &294960735
 GameObject:
   m_ObjectHideFlags: 0
