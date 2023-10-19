@@ -197,6 +197,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   feet: {fileID: 2634913555213472900}
+  RightArm: {fileID: 5396925498550498610}
+  LeftArm: {fileID: 6339547565811011829}
   DistanceFromFeet: 0.1
   grounded: 0
   moveSpeed: 10
