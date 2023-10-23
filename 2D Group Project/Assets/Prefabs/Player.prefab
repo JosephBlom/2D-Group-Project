@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 3549401934904913611}
   - component: {fileID: 4933708119351727727}
   - component: {fileID: 8997187774063928481}
+  - component: {fileID: 2776464913202564112}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -203,11 +204,13 @@ MonoBehaviour:
   DistanceFromFeet: 0.1
   grounded: 0
   sided: 0
+  left: 0
+  right: 0
   MaxJumps: 3
   Jumps: 0
   moveSpeed: 10
   jumpSpeed: 15
-  wallJumpSpeed: 20
+  wallJumpSpeed: 5
 --- !u!50 &3421756003899589051
 Rigidbody2D:
   serializedVersion: 4
@@ -233,7 +236,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &3549401934904913611
 MonoBehaviour:
@@ -315,3 +318,18 @@ MonoBehaviour:
   prefab: {fileID: 6783655578617115570, guid: c4741feff26982e4e9138c13ee76fa63, type: 3}
   fireTime: 2
   bulletSpeed: 10
+--- !u!114 &2776464913202564112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8024739542792494803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd60b95a1c2527147808f7031879b608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 1
+  MaxHealth: 1
+  text: {fileID: 0}
