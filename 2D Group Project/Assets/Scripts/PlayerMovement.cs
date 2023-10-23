@@ -58,38 +58,51 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
+        if (grounded)
+        {
+            rb2d.velocity += new Vector2(0f, jumpSpeed);
+            return;
+        }
         if (sided && Jumps > 0)
         {
             Jumps--;
             if (left)
             {
-                rb2d.velocity = new Vector2(wallJumpSpeed, jumpSpeed);
+                rb2d.velocity = new Vector2(-wallJumpSpeed, jumpSpeed);
             }
             if (right)
             {
-                rb2d.velocity = new Vector2(-wallJumpSpeed, jumpSpeed);
+                rb2d.velocity = new Vector2(wallJumpSpeed, jumpSpeed);
             }
-            return;
         }
-        if (grounded)
-        {
-            rb2d.velocity += new Vector2(0f, jumpSpeed);
-        }
+
     }
 
     void Run()
     {
-        Vector2 playerVelocity = new Vector2(moveInput.x * moveSpeed, rb2d.velocity.y);
-        rb2d.velocity = playerVelocity;
+        if (grounded || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+        {
+            Vector2 playerVelocity = new Vector2(moveInput.x * moveSpeed, rb2d.velocity.y);
+            rb2d.velocity = playerVelocity;
+        }
     }
 
     void flipSprite()
     {
-        bool playerHaseHorizontalSpeed = Mathf.Abs(rb2d.velocity.x) > Mathf.Epsilon;
-
+        switch (rb2d.velocity.x)
+        {
+            case > 0:
+                GetComponent<SpriteRenderer>().flipX = true;
+                break;
+            case < 0:
+                GetComponent<SpriteRenderer>().flipX = false;
+                break;
+        }
+        //bool playerHaseHorizontalSpeed = Mathf.Abs(rb2d.velocity.x) > Mathf.Epsilon;
+        /*
         if (playerHaseHorizontalSpeed)
         {
-            transform.localScale = new Vector2(-Mathf.Sign(rb2d.velocity.x), 1f);
-        }
+            //transform.localScale = new Vector2(-Mathf.Sign(rb2d.velocity.x), 1f);
+        }*/
     }
 }

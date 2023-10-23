@@ -10,7 +10,10 @@ public class PlayerHealth : MonoBehaviour
     public Text text;
     private void Update()
     {
-        text.text = Health.ToString();
+        if (text != null)
+        {
+            text.text = Health.ToString();
+        }
         if (Health <= 0)
         {
             Die();
