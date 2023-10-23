@@ -19,25 +19,26 @@ public class EnemyMove : MonoBehaviour
     {
         //get the spawn position so we know how to get home
         startPosition = transform.position;
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        float verticalVelocity = GetComponent<Rigidbody2D>().velocity.y;
         Vector3 playerPosition = player.transform.position;
         Vector2 chaseDirection = new Vector2(playerPosition.x - transform.position.x, playerPosition.y - transform.position.y);
         if (chaseDirection.magnitude < chaseTriggerDistance)
         {
             //player gets too close to the enemy
             home = false;
+
+            chaseDirection.y = 0f;
             chaseDirection.Normalize();
             GetComponent<Rigidbody2D>().velocity = chaseDirection * chaseSpeed;
         }
         else if (home == false)
         {
-            Vector2 homeDirection = new Vector2(startPosition.x - transform.position.x,
-                                        startPosition.y - transform.position.y);
+            Vector2 homeDirection = new Vector2(startPosition.x - transform.position.x, startPosition.y - transform.position.y);
             if (homeDirection.magnitude < 0.3f)
             {
                 //we've arrived home
