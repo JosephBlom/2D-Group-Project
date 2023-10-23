@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     public bool grounded;
     //This boolean is if the player is touching a wall
     public bool sided;
+    public bool left;
+    public bool right;
 
     public int MaxJumps = 3;
     public int Jumps;
@@ -41,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D rightArm = Physics2D.Raycast(RightArm.position, Vector2.right, DistanceFromFeet, 3);
         grounded = _hit;
         sided = leftArm || rightArm;
+        left = leftArm;
+        right = rightArm;
         if (grounded)
         {
             Jumps = MaxJumps;
@@ -57,7 +61,14 @@ public class PlayerMovement : MonoBehaviour
         if (sided && Jumps > 0)
         {
             Jumps--;
-            rb2d.velocity += new Vector2(0f, jumpSpeed);
+            if (left)
+            {
+                rb2d.velocity = new Vector2(wallJumpSpeed, jumpSpeed);
+            }
+            if (right)
+            {
+                rb2d.velocity = new Vector2(-wallJumpSpeed, jumpSpeed);
+            }
             return;
         }
         if (grounded)
