@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 3421756003899589051}
   - component: {fileID: 3549401934904913611}
   - component: {fileID: 4933708119351727727}
+  - component: {fileID: 8997187774063928481}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -296,6 +297,21 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09, y: 0}
-  m_Size: {x: 0.99, y: 2}
+  m_Offset: {x: -0.09000003, y: 0.00000011920929}
+  m_Size: {x: 0.99, y: 1.6201947}
   m_Direction: 0
+--- !u!114 &8997187774063928481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8024739542792494803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e13863fdc45e8749b17726d5160f4ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6783655578617115570, guid: c4741feff26982e4e9138c13ee76fa63, type: 3}
+  fireTime: 2
+  bulletSpeed: 10
