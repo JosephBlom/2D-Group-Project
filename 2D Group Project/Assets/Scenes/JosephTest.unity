@@ -205,7 +205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7812753621296975659, guid: b44d0ceb91ef621498fc880ef301b5ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.18
+      value: -1.216
       objectReference: {fileID: 0}
     - target: {fileID: 7812753621296975659, guid: b44d0ceb91ef621498fc880ef301b5ea, type: 3}
       propertyPath: m_LocalPosition.z
@@ -270,7 +270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6531967250233904166, guid: eb22d1754f0d7e741a364466c58afc49, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.18
+      value: -1.216
       objectReference: {fileID: 0}
     - target: {fileID: 6531967250233904166, guid: eb22d1754f0d7e741a364466c58afc49, type: 3}
       propertyPath: m_LocalPosition.z
@@ -376,6 +376,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7812753621296975659, guid: b44d0ceb91ef621498fc880ef301b5ea, type: 3}
   m_PrefabInstance: {fileID: 736014427}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2049865653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2646573855483984332, guid: 70aaedaeef9ca92468798b80d98a8054, type: 3}
+  m_PrefabInstance: {fileID: 1880383768168018720}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2049865659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049865653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697826c4a1cd63641a3421f6074490e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1906936997}
+  chaseSpeed: 2
+  chaseTriggerDistance: 3
+  paceDirection: {x: 0, y: 0, z: 0}
+  paceDistance: 3
 --- !u!1001 &1880383768168018720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -388,6 +410,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1906936997}
+    - target: {fileID: 1101201027852338578, guid: 70aaedaeef9ca92468798b80d98a8054, type: 3}
+      propertyPath: chaseTriggerDistance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2646573855483984332, guid: 70aaedaeef9ca92468798b80d98a8054, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -432,10 +458,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1101201027852338578, guid: 70aaedaeef9ca92468798b80d98a8054, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2646573855483984332, guid: 70aaedaeef9ca92468798b80d98a8054, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2049865659}
   m_SourcePrefab: {fileID: 100100000, guid: 70aaedaeef9ca92468798b80d98a8054, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

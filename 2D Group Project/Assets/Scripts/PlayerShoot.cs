@@ -4,7 +4,7 @@ using System.Collections;
 
 [RequireComponent(typeof(Rigidbody2D))]
 
-public class JosephTest : MonoBehaviour
+public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] GameObject prefab;
     [SerializeField] float fireTime = 2f;
