@@ -35,7 +35,7 @@ public class PlayerShoot : MonoBehaviour
 
         timer += Time.deltaTime;
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && timer > fireTime)
         {
             chargeTime += Time.deltaTime;
             if (multFactor < 3)
@@ -56,6 +56,7 @@ public class PlayerShoot : MonoBehaviour
             shootDirection.Normalize();
             GameObject bullet = Instantiate(prefab, transform.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody2D>().velocity = shootDirection * bulletSpeed;
+            bullet.GetComponent<Rigidbody2D>().angularVelocity = -720;
             Destroy(bullet, 3);
             timer = 0;
             chargeTime = 0f;
