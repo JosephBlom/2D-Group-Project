@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_UI : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject Player;
+    PlayerShoot playerShoot;
+    public Slider LanternSlider;
+
     void Start()
     {
-        
+        playerShoot = Player.GetComponent<PlayerShoot>();
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        LanternSlider.value = 2 - playerShoot.timer;
     }
 }
