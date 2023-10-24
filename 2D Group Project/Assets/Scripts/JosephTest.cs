@@ -7,6 +7,7 @@ using System;
 public class JosephTest : MonoBehaviour
 {
 
+    [SerializeField] ParticleSystem broken;
 
     void Start()
     {
@@ -20,8 +21,9 @@ public class JosephTest : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag != "Enemy" && collision.gameObject.tag != "Player")
+        if(collision.gameObject.tag != "Enemy" || collision.gameObject.tag != "Player")
         {
+            broken.Play();
             Destroy(gameObject);
         }
     }
