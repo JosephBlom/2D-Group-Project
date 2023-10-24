@@ -6,8 +6,7 @@ using System;
 
 public class JosephTest : MonoBehaviour
 {
-
-    [SerializeField] ParticleSystem broken;
+    public GameObject ParticleSystem1;
 
     void Start()
     {
@@ -23,8 +22,9 @@ public class JosephTest : MonoBehaviour
     {
         if(!collision.CompareTag("Enemy") && !collision.CompareTag("Player"))
         {
-            Debug.Log("I Broke Lol");
-            broken.Play();
+            GameObject ParticleSystem2 = Instantiate(ParticleSystem1, transform.position, Quaternion.identity);
+            ParticleSystem2.GetComponent<ParticleSystem>().Play();
+            Destroy(ParticleSystem2, 5);
             Destroy(gameObject);
         }
     }

@@ -18,6 +18,7 @@ public class PlayerShoot : MonoBehaviour
     void Start()
     {
         bulletSpeedStart = bulletSpeed;
+        timer = 2;
     }
 
     // Update is called once per frame
