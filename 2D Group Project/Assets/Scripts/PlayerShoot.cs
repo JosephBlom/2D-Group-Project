@@ -10,7 +10,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] float fireTime = 2f;
     [SerializeField] float bulletSpeed = 10f;
 
-    float timer = 0f;
+    public float timer = 0f;
     float chargeTime = 0f;
     float bulletSpeedStart;
     float multFactor;
