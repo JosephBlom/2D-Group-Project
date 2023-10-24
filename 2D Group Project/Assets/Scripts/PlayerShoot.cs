@@ -37,6 +37,7 @@ public class PlayerShoot : MonoBehaviour
             shootDirection.Normalize();
             GameObject bullet = Instantiate(prefab, transform.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody2D>().velocity = shootDirection * bulletSpeed;
+            bullet.GetComponent<Rigidbody2D>().angularVelocity = -360*2;
             Destroy(bullet, 3);
             timer = 0;
         }
