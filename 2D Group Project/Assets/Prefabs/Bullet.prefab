@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9007679742407628145}
   - component: {fileID: 2277655163690835558}
   - component: {fileID: 1845684288789978626}
+  - component: {fileID: -4598405924262426268}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Lantern
@@ -148,3 +149,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-4598405924262426268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6783655578617115570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d04f9e7d1226741b3c2a31f069d085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
