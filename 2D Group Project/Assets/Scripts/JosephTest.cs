@@ -1,33 +1,42 @@
 using UnityEngine;
 using System.Collections;
 using System;
-
-[RequireComponent(typeof(Rigidbody2D))]
+using UnityEditor.Rendering;
 
 public class JosephTest : MonoBehaviour
 {
-    public GameObject ParticleSystem1;
+
+    public GameObject player;
+    public GameObject aoeZone;
+    public GameObject aoeAttack;
+
+
+    float timer = 0f;
+
 
     void Start()
     {
-
+        
     }
 
     void Update()
     {
-
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(!collision.CompareTag("Enemy") && !collision.CompareTag("Player"))
+        timer += Time.deltaTime;
+        if (timer > 3f)
         {
-            GameObject ParticleSystem2 = Instantiate(ParticleSystem1, transform.position, Quaternion.identity);
-            ParticleSystem2.GetComponent<ParticleSystem>().Play();
-            Destroy(ParticleSystem2, 5);
-            Destroy(gameObject);
+            bossAOE();
+            
         }
     }
 
+    IEnumerator bossAOE()
+    {
+        Vector3 playerPos = player.transform.position;
+        GameObject aoeWarning = Instantiate(aoeZone, playerPos, Quaternion.identity);
+        yield return new WaitForSeconds(2);
+        Destroy(aoeWarning);
+        GameObject aoeHitbox = Instantiate(aoeAttack, playerPos, Quaternion.identity);
+        timer = 0f;
+    }
 }
 
