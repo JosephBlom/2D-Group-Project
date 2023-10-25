@@ -304,7 +304,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 8024739542792494803}
+  Boss: {fileID: 0}
   LanternSlider: {fileID: 8072711056810801843}
+  BossHealthSlider: {fileID: 0}
+  BossStats: {fileID: 0}
 --- !u!1 &7276872452494562478
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,7 +628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e13863fdc45e8749b17726d5160f4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6783655578617115570, guid: c4741feff26982e4e9138c13ee76fa63, type: 3}
+  prefab: {fileID: 6561232185353486866, guid: 426eb6e0c7d99a2408f1373c9a8a4f60, type: 3}
   fireTime: 2
   bulletSpeed: 10
   timer: 0
