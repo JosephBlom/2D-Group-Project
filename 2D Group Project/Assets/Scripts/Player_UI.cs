@@ -10,7 +10,7 @@ public class Player_UI : MonoBehaviour
     PlayerShoot playerShoot;
     public Slider LanternSlider;
     public Slider BossHealthSlider;
-    public JosephTest BossStats;
+    public BossLogic BossStats;
 
     float BossHealth;
 
