@@ -33,6 +33,6 @@ public class Candle : Torch
     {
         isLit = true;
         GetComponent<Light2D>().enabled = isLit;
-        GameObject.FindGameObjectsWithTag("MainCamera")[0].GetComponent<JosephTest>().CheckPuzzle();
+        GameObject.FindGameObjectsWithTag("MainCamera")[0].GetComponent<CandleLogic>().CheckPuzzle();
     }
 }
