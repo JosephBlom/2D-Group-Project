@@ -3,67 +3,39 @@ using System.Collections;
 using System;
 using UnityEditor.Rendering;
 using JetBrains.Annotations;
+using UnityEngine.Rendering.Universal;
 
 public class JosephTest : MonoBehaviour
 {
-
-    public GameObject player;
-    public GameObject aoeZone;
-    public GameObject aoeAttack;
-    public int bossHealth = 100;
-
-    bool alive = true;
-    float timer = 0f;
-
+    public Candle[] Candles;
+    public bool complete = true;
     void Start()
     {
-
+        Candles = FindObjectsOfType<Candle>();
     }
-    
-    void Update()
+
+    public void CheckPuzzle()
     {
-        checkDie();
-        if (alive)
+        complete = true;
+        bool allLit = true; 
+        for (int i = 0; i < Candles.Length; i++)
         {
-            timer += Time.deltaTime;
-            if (timer > 3f)
+            if (!Candles[i].Value == Candles[i].isLit)
             {
-                StartCoroutine(bossAOE());
+                complete = false;
+            }
+            if (!Candles[i].isLit)
+            {
+                allLit = false;
             }
         }
-        
-    }
-
-    IEnumerator bossAOE()
-    {
-        Vector3 playerPos = player.transform.position;
-        GameObject aoeWarning = Instantiate(aoeZone, playerPos, Quaternion.identity);
-        timer = 0f;
-        yield return new WaitForSeconds(2);
-        Destroy(aoeWarning);
-        GameObject aoeHitbox = Instantiate(aoeAttack, playerPos, Quaternion.identity);
-        yield return new WaitForSeconds(0.15f);
-        Destroy(aoeHitbox);
-    }
-
-    void checkDie()
-    {
-        if(bossHealth > 0)
+        if (!complete && allLit)
         {
-            alive = true;
-        }
-        else
-        {
-            alive = false;
-            Destroy(gameObject,2.5f);
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Lantern"))
-        {
-            bossHealth -= 10;
+            for(int i = 0;i < Candles.Length; i++)
+            {
+                Candles[i].isLit = false;
+                Candles[i].GetComponent<Light2D>().enabled = false;
+            }
         }
     }
 }

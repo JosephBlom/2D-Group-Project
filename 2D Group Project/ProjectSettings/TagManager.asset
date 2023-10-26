@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - AOEAttack
   - Boss
+  - True
   layers:
   - Default
   - TransparentFX
