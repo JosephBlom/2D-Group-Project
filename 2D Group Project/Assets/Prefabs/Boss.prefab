@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5245631269947736454}
   - component: {fileID: 2104969804194351031}
+  - component: {fileID: 2732442367504415822}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,3 +85,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2732442367504415822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147923819681229194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 349ae412e74e50447a29a8d36964c1de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  aoeZone: {fileID: 7547709528329031954, guid: 2ebdc0d4f4245034b9471068a0c2f467, type: 3}
+  aoeAttack: {fileID: 728407017766338248, guid: c1862d729fe268844b96b776274f365a, type: 3}
+  bossHealth: 100

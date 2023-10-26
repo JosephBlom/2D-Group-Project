@@ -33,6 +33,10 @@ public class Player_UI : MonoBehaviour
         {
             BossHurt();
         }
+        else
+        {
+            BossHealthSlider.gameObject.SetActive(false);
+        }
         
         
     }
