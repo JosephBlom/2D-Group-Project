@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
         }
         GameObject ParticleSystem2 = Instantiate(ParticleSystem1, transform.position, Quaternion.identity);
         ParticleSystem2.GetComponent<ParticleSystem>().Play();
+        ParticleSystem2.GetComponent<AudioSource>().Play();
         Destroy(gameObject);
     }
 }

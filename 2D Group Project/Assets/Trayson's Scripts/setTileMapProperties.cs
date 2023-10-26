@@ -14,6 +14,11 @@ public class setTileMapProperties : MonoBehaviour
         PhysicsMaterial2D Material = new PhysicsMaterial2D { };
         Material.friction = Friction;
         Material.bounciness = Bounciness;
+        if (GetComponent<TilemapCollider2D>().usedByComposite)
+        {
+            GetComponent<CompositeCollider2D>().sharedMaterial = Material;
+            return;
+        }
         GetComponent<TilemapCollider2D>().sharedMaterial = Material;
     }
 
