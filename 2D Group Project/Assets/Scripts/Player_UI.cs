@@ -19,12 +19,12 @@ public class Player_UI : MonoBehaviour
     void Start()
     {
         temp = GameObject.FindGameObjectsWithTag("Boss");
-        if(temp.Length>0 )
+        if(temp.Length > 0 )
         {
             bossHere = true;
         }
         playerShoot = Player.GetComponent<PlayerShoot>();
-        BossHealthSlider.value = 2;
+        BossHealthSlider.value = 1;
     }
     void Update()
     {
