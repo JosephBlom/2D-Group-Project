@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public Canvas playerUI;
     void Start()
     {
         GetComponent<Canvas>().enabled = false;
@@ -16,6 +17,7 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1)
         {
             Time.timeScale = 0;
+            playerUI.GetComponent<Canvas>().enabled = false;
             GetComponent<Canvas>().enabled = true;
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 0)
@@ -28,6 +30,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1;
+        playerUI.GetComponent<Canvas>().enabled = true;
         GetComponent<Canvas>().enabled = false;
     }   
 
