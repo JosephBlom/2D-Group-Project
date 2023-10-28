@@ -12,6 +12,7 @@ public class LeviathanScript : MonoBehaviour
     public GameObject SegmentObject;
     public Transform BodyParent;
     public Rigidbody2D Head;
+    public float speed;
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -26,7 +27,7 @@ public class LeviathanScript : MonoBehaviour
         }
         Vector3 direction = Player.transform.position - Head.transform.position;
         int directInt = Mathf.RoundToInt(direction.normalized.x);
-        Head.velocity = direction;
+        Head.velocity = direction.normalized * speed;
         if (directInt == 0)
         {
             directInt = 1;
@@ -54,7 +55,7 @@ public class LeviathanScript : MonoBehaviour
         }
         for (int i = 0; i < Segments; i++)
         {
-            yield return new WaitForSecondsRealtime(10/Segments);
+            yield return new WaitForSeconds(10/Segments);
             GameObject temp = Instantiate(SegmentObject, new Vector2(Head.transform.position.x - i, Head.transform.position.y), Quaternion.identity);
             temp.transform.parent = BodyParent;
             if (LastBody == null)
@@ -68,7 +69,7 @@ public class LeviathanScript : MonoBehaviour
             LastBody = temp.GetComponent<Rigidbody2D>();
             if (i == Segments - 1)
             {
-                //temp.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                temp.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             }
         }
     }
