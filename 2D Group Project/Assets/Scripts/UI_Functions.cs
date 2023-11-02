@@ -11,11 +11,6 @@ public class UI_Functions : MonoBehaviour
         SettingsMenu.SetActive(false);
     }
 
-    void Update()
-    {
-
-    }
-
     public void Play()
     {
         SceneLoader(1);
