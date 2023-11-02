@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator animator;
+
     Vector2 moveInput;
     Rigidbody2D rb2d;
 
@@ -49,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Jumps = MaxJumps;
         }
+        animator.SetBool("Walking", rb2d.velocity.magnitude > 0);
     }
 
     void OnMove(InputValue value)
