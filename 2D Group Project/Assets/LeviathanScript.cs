@@ -55,7 +55,7 @@ public class LeviathanScript : MonoBehaviour
         }
         for (int i = 0; i < Segments; i++)
         {
-            yield return new WaitForSeconds(10/Segments);
+            yield return new WaitForSeconds(0.05f);
             GameObject temp = Instantiate(SegmentObject, new Vector2(Head.transform.position.x - i, Head.transform.position.y), Quaternion.identity);
             temp.transform.parent = BodyParent;
             if (LastBody == null)
