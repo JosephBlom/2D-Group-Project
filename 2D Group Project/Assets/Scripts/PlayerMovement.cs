@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        
         //Applying Movement.
         if (grounded || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
         {
@@ -56,6 +57,15 @@ public class PlayerMovement : MonoBehaviour
             case < 0:
                 GetComponent<SpriteRenderer>().flipX = false;
                 break;
+        }
+
+        if (Mathf.Abs(rb2d.velocity.x) > Mathf.Epsilon)
+        {
+            animator.SetBool("Running", true);
+        }
+        else
+        {
+            animator.SetBool("Running", false);
         }
 
         //Calculating Raycast Booleans.
