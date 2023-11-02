@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -7,42 +8,38 @@ using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 public class LeviathanScript : MonoBehaviour
 {
     public GameObject Player;
-    public bool AttackingTime = false;
     public int Segments = 10;
-    public GameObject SegmentObject;
-    public Transform BodyParent;
-    public Rigidbody2D Head;
     public float speed;
+    public Transform BodyParent;
+    public GameObject SegmentObject;
+    public Rigidbody2D Head;
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        StartCoroutine(GenerateLeviathan());
     }
 
     private void Update()
     {
-        if (AttackingTime)
-        {
-            AttackingTime = false;
-            Attack();
-        }
+        //Calculate Vars
         Vector3 direction = Player.transform.position - Head.transform.position;
-        int directInt = Mathf.RoundToInt(direction.normalized.x);
-        Head.velocity = direction.normalized * speed;
-        if (directInt == 0)
-        {
-            directInt = 1;
-        }
-        Head.transform.localScale = new Vector3(1, directInt, 1);
         float angle = Mathf.Atan2(direction.normalized.y, direction.normalized.x) * Mathf.Rad2Deg;
-        Quaternion rotation = new Quaternion();
-        rotation.eulerAngles = new Vector3(0, 0, angle);
+        Quaternion rotation = Quaternion.Euler(0, 0, angle);
+
+        //Check if directint == 0, if so then make it equal to 1.
+        int directInt = Mathf.RoundToInt(direction.normalized.x);
+        directInt = Convert.ToInt32(directInt == 0);
+
+        //Apply Vars
+        Head.velocity = direction.normalized * speed;
+        Head.transform.localScale = new Vector3(1, directInt, 1);
         Head.transform.rotation = rotation;
     }
 
-    void Attack()
+    //Todo: Make attack an actual thing.
+    public void Attack()
     {
-        Debug.Log("Attack");
-        StartCoroutine(GenerateLeviathan());
+        
     }
 
     IEnumerator GenerateLeviathan()
@@ -55,6 +52,7 @@ public class LeviathanScript : MonoBehaviour
         }
         for (int i = 0; i < Segments; i++)
         {
+            //This is so that it doesn't just generate instantly so the player can see 
             yield return new WaitForSeconds(0.05f);
             GameObject temp = Instantiate(SegmentObject, new Vector2(Head.transform.position.x - i, Head.transform.position.y), Quaternion.identity);
             temp.transform.parent = BodyParent;

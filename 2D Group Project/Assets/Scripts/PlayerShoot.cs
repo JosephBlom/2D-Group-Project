@@ -13,7 +13,7 @@ public class PlayerShoot : MonoBehaviour
     public Animator animator;
 
     public float timer = 0f;
-    float startTime = 0f;
+    public float startTime = 0f;
     float chargeTime = 0f;
     float bulletSpeedStart;
 

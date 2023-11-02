@@ -12,40 +12,25 @@ public class Player_UI : MonoBehaviour
     public Slider BossHealthSlider;
     public BossLogic BossStats;
     bool bossHere;
-    GameObject[] temp;
-
-    float BossHealth;
-
     void Start()
     {
-        temp = GameObject.FindGameObjectsWithTag("Boss");
-        if(temp.Length > 0 )
-        {
-            bossHere = true;
-        }
         playerShoot = Player.GetComponent<PlayerShoot>();
+        bossHere = GameObject.FindGameObjectsWithTag("Boss").Length > 0;
         BossHealthSlider.value = 1;
     }
     void Update()
     {
-        LanternSlider.value = playerShoot.timer - playerShoot.fireTime + Time.time;
+        LanternSlider.value = -(Time.time - playerShoot.fireTime);
         LanternSlider.maxValue = playerShoot.timer;
-        if (bossHere)
-        {
-            BossHurt();
-        }
-        else
-        {
-            BossHealthSlider.gameObject.SetActive(false);
-        }
-        
-        
+        BossHurt();
     }
 
     void BossHurt()
     {
-        BossHealth = BossStats.bossHealth;
-        BossHealthSlider.value = (BossHealth / 100);
+        BossHealthSlider.gameObject.SetActive(bossHere);
+        if (!bossHere)
+            return;
+        BossHealthSlider.value = (Boss.GetComponent<BossLogic>().bossHealth / 100);
         BossHealthSlider.gameObject.SetActive(BossHealthSlider.value > 0);
     }
 }

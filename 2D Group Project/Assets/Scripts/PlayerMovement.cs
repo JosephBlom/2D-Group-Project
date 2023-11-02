@@ -21,15 +21,17 @@ public class PlayerMovement : MonoBehaviour
     public bool grounded;
     //This boolean is if the player is touching a wall
     public bool sided;
+    //This boolean is if the player is touching a left wall
     public bool left;
+    //You can probably guess.
     public bool right;
 
     public int MaxJumps = 3;
     public int Jumps;
 
-    [SerializeField] int moveSpeed = 5;
-    [SerializeField] int jumpSpeed = 5;
-    [SerializeField] int wallJumpSpeed = 25;
+    public int moveSpeed = 5;
+    public int jumpSpeed = 5;
+    public int wallJumpSpeed = 25;
 
     void Start()
     {
@@ -38,8 +40,25 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        Run();
-        flipSprite();
+        //Applying Movement.
+        if (grounded || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+        {
+            Vector2 playerVelocity = new Vector2(moveInput.x * moveSpeed, rb2d.velocity.y);
+            rb2d.velocity = playerVelocity;
+        }
+
+        //Flipping Sprite Based On Velocity.
+        switch (rb2d.velocity.x)
+        {
+            case > 0:
+                GetComponent<SpriteRenderer>().flipX = true;
+                break;
+            case < 0:
+                GetComponent<SpriteRenderer>().flipX = false;
+                break;
+        }
+
+        //Calculating Raycast Booleans.
         RaycastHit2D _hit = Physics2D.Raycast(feet.position, Vector2.down, DistanceFromFeet , 3);
         RaycastHit2D leftArm = Physics2D.Raycast(LeftArm.position, Vector2.left, DistanceFromFeet, 3);
         RaycastHit2D rightArm = Physics2D.Raycast(RightArm.position, Vector2.right, DistanceFromFeet, 3);
@@ -51,7 +70,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Jumps = MaxJumps;
         }
-        //animator.SetBool("Walking", rb2d.velocity.magnitude > 0);
     }
 
     void OnMove(InputValue value)
@@ -79,33 +97,5 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-    }
-
-    void Run()
-    {
-        if (grounded || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
-        {
-            Vector2 playerVelocity = new Vector2(moveInput.x * moveSpeed, rb2d.velocity.y);
-            rb2d.velocity = playerVelocity;
-        }
-    }
-
-    void flipSprite()
-    {
-        switch (rb2d.velocity.x)
-        {
-            case > 0:
-                GetComponent<SpriteRenderer>().flipX = true;
-                break;
-            case < 0:
-                GetComponent<SpriteRenderer>().flipX = false;
-                break;
-        }
-        //bool playerHaseHorizontalSpeed = Mathf.Abs(rb2d.velocity.x) > Mathf.Epsilon;
-        /*
-        if (playerHaseHorizontalSpeed)
-        {
-            //transform.localScale = new Vector2(-Mathf.Sign(rb2d.velocity.x), 1f);
-        }*/
     }
 }
