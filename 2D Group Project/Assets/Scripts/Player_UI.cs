@@ -28,7 +28,8 @@ public class Player_UI : MonoBehaviour
     }
     void Update()
     {
-        LanternSlider.value = 2 - playerShoot.timer;
+        LanternSlider.value = playerShoot.timer - playerShoot.fireTime + Time.time;
+        LanternSlider.maxValue = playerShoot.timer;
         if (bossHere)
         {
             BossHurt();

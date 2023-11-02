@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Jumps = MaxJumps;
         }
-        animator.SetBool("Walking", rb2d.velocity.magnitude > 0);
+        //animator.SetBool("Walking", rb2d.velocity.magnitude > 0);
     }
 
     void OnMove(InputValue value)
