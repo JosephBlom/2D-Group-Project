@@ -1,9 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class LeviathanScript : MonoBehaviour
 {
@@ -24,16 +20,15 @@ public class LeviathanScript : MonoBehaviour
         //Calculate Vars
         Vector3 direction = Player.transform.position - Head.transform.position;
         float angle = Mathf.Atan2(direction.normalized.y, direction.normalized.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.Euler(0, 0, angle);
 
         //Check if directint == 0, if so then make it equal to 1.
         int directInt = Mathf.RoundToInt(direction.normalized.x);
-        directInt = Convert.ToInt32(directInt == 0);
+        if (directInt == 0) { directInt = 1; }
 
         //Apply Vars
         Head.velocity = direction.normalized * speed;
         Head.transform.localScale = new Vector3(1, directInt, 1);
-        Head.transform.rotation = rotation;
+        Head.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     //Todo: Make attack an actual thing.
