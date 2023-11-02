@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3efa8d721657c954389de814c36fa9b6
+guid: c03b053cbb4fbd54da0d4ac5b7185a13
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,274 +110,316 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CaveTilemap_0
+      name: CaveTilemap (New)_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
+        x: 34
+        y: 100
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0ca4ddaa07a58243b1311ae68136849
-      internalID: -511370932
+      spriteID: c1c887527cb37844b996110dfe8ad995
+      internalID: 2041154507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveTilemap_1
+      name: CaveTilemap (New)_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
+        x: 67
+        y: 100
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6facb35e521d50544892f1ee4ef3c665
-      internalID: 2121551291
+      spriteID: f54806a86dcd0024584fb77151ccfe77
+      internalID: -319719199
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveTilemap_2
+      name: CaveTilemap (New)_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
+        x: 100
+        y: 100
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4cfcef5066bf8f418c67dbbe8739347
-      internalID: -96006540
+      spriteID: d9aa660a3735fe044a60d5cfb9a214fc
+      internalID: -200658059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveTilemap_3
+      name: CaveTilemap (New)_3
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 1
+        y: 67
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 733962a38c31ffd4c8676dd0aca53895
-      internalID: -558756891
+      spriteID: c137a5e3d2db3c342a178c229557cb5e
+      internalID: -1749831814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveTilemap_4
+      name: CaveTilemap (New)_4
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
+        x: 34
+        y: 67
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab37a485600694a45adb5b2ea111ed9f
-      internalID: 1853848279
+      spriteID: cfc6fd175cb360c48806763c107a1c89
+      internalID: -1704719144
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveTilemap_5
+      name: CaveTilemap (New)_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
+        x: 67
+        y: 67
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8640d07fc043a9f448a899f6eb152e2c
-      internalID: 778301838
+      spriteID: 7467700a44801a84caf3af97d5fab296
+      internalID: -1161892818
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveTilemap_6
+      name: CaveTilemap (New)_6
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 100
+        y: 67
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ef6e370c7792bc4aaa9d14bb7f07b06
-      internalID: -2129407667
+      spriteID: fe75b60338d183249bb8dbaabb131b27
+      internalID: -535565954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveTilemap_7
+      name: CaveTilemap (New)_7
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
+        x: 1
+        y: 34
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cefd7b9f1bb5b284a9d38f4de884afd0
-      internalID: 1848389465
+      spriteID: fca76f922bbf3bd44a5c263b86407a5e
+      internalID: -1067448339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveTilemap_8
+      name: CaveTilemap (New)_8
       rect:
         serializedVersion: 2
-        x: 96
-        y: 32
+        x: 34
+        y: 34
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1564b06a602a52e40b44b354b5b55582
-      internalID: 384066808
+      spriteID: af82972bc7fdf5443b46c27c31b550fb
+      internalID: 1748514706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveTilemap_9
+      name: CaveTilemap (New)_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 67
+        y: 34
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bdfc5da72fc72947a3fb8c0d9419d77
-      internalID: 1090453721
+      spriteID: d4eeb66b5d0fc3644b7c73241aef8b7c
+      internalID: 1238903673
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveTilemap_10
+      name: CaveTilemap (New)_10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 100
+        y: 34
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 588cdc645cf65cd47a7bafadb5585b3e
-      internalID: -1710879188
+      spriteID: ea480d96c1a3a8640b7541dfb14ddd7b
+      internalID: 263622225
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveTilemap_11
+      name: CaveTilemap (New)_11
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
+        x: 1
+        y: 1
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80f56ad2f6fc1934895da2777fe2e96e
-      internalID: -587135984
+      spriteID: b10cfa0e75d7e1b489f9db9be756875d
+      internalID: -625408050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveTilemap_12
+      name: CaveTilemap (New)_12
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
+        x: 34
+        y: 1
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f99d5f449a123e4bb4c1531935f2b2f
-      internalID: -1333748670
+      spriteID: 5cad2df2fc33b9f47951bcd120c1508d
+      internalID: -1727057041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaveTilemap (New)_13
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c523f0c7cfceb1d4e9f9acfa3eef5843
+      internalID: -2121911851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaveTilemap (New)_14
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72dd8643ad3b39b4a848abde82d45bc8
+      internalID: 1492495955
       vertices: []
       indices: 
       edges: []
@@ -393,19 +435,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CaveTilemap_0: -511370932
-      CaveTilemap_1: 2121551291
-      CaveTilemap_10: -1710879188
-      CaveTilemap_11: -587135984
-      CaveTilemap_12: -1333748670
-      CaveTilemap_2: -96006540
-      CaveTilemap_3: -558756891
-      CaveTilemap_4: 1853848279
-      CaveTilemap_5: 778301838
-      CaveTilemap_6: -2129407667
-      CaveTilemap_7: 1848389465
-      CaveTilemap_8: 384066808
-      CaveTilemap_9: 1090453721
+      CaveTilemap (New)_0: 2041154507
+      CaveTilemap (New)_1: -319719199
+      CaveTilemap (New)_10: 263622225
+      CaveTilemap (New)_11: -625408050
+      CaveTilemap (New)_12: -1727057041
+      CaveTilemap (New)_13: -2121911851
+      CaveTilemap (New)_14: 1492495955
+      CaveTilemap (New)_2: -200658059
+      CaveTilemap (New)_3: -1749831814
+      CaveTilemap (New)_4: -1704719144
+      CaveTilemap (New)_5: -1161892818
+      CaveTilemap (New)_6: -535565954
+      CaveTilemap (New)_7: -1067448339
+      CaveTilemap (New)_8: 1748514706
+      CaveTilemap (New)_9: 1238903673
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
