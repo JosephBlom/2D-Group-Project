@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -33,6 +34,16 @@ public class Candle : Torch
     {
         isLit = true;
         GetComponent<Light2D>().enabled = isLit;
+        if (GameObject.FindGameObjectsWithTag("MainCamera") == null)
+        {
+            Debug.LogWarning("MainCamera Is Not Tagged/Exists In Scene.");
+            return;
+        }
+        if (GameObject.FindGameObjectsWithTag("MainCamera")[0].GetComponent<CandleLogic>() == null)
+        {
+            Debug.LogWarning("MainCamera Does Not Have CandleLogic Script.");
+            return;
+        }
         GameObject.FindGameObjectsWithTag("MainCamera")[0].GetComponent<CandleLogic>().CheckPuzzle();
     }
 }
