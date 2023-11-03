@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     Vector2 moveInput;
     Rigidbody2D rb2d;
 
+    public bool Swimming;
+
     public Transform feet;
     public Transform RightArm;
     public Transform LeftArm;
@@ -79,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        if (grounded)
+        if (grounded || Swimming)
         {
             rb2d.velocity += new Vector2(0f, jumpSpeed);
             return;
