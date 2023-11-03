@@ -18,7 +18,13 @@ public class Hint : MonoBehaviour
             switch (ray.transform.tag)
             {
                 case "Sign":
-                    text.text = ray.transform.GetComponent<Sign>().Text;
+                    string tempText = string.Empty;
+                    foreach (string string1 in ray.transform.GetComponent<Sign>().Text.Split("/n"))
+                    {
+                        tempText += string1;
+                        tempText += "\n";
+                    }
+                    text.text = tempText;
                     break;
             }
         }
