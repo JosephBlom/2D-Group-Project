@@ -70,3 +70,6 @@ TagManager:
   - name: Platforms
     uniqueID: 961316449
     locked: 0
+  - name: Toggle Door
+    uniqueID: 4222943037
+    locked: 0
