@@ -48,12 +48,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Platforms
-    uniqueID: 961316449
+  - name: Background
+    uniqueID: 1310155457
+    locked: 0
+  - name: Sign
+    uniqueID: 1201043863
     locked: 0
   - name: BossAttacks
     uniqueID: 2778673589
     locked: 0
   - name: Player
     uniqueID: 3876973865
+    locked: 0
+  - name: Water
+    uniqueID: 2350225013
+    locked: 0
+  - name: Platforms
+    uniqueID: 961316449
     locked: 0
