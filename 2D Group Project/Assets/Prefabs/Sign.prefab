@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7503057100823954568}
   - component: {fileID: 8152499463882289650}
   - component: {fileID: -199831909575523341}
+  - component: {fileID: 9022510645701025943}
   m_Layer: 0
   m_Name: Sign
-  m_TagString: Untagged
+  m_TagString: Sign
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,3 +140,16 @@ PolygonCollider2D:
       - {x: 0.45691946, y: -0.20406944}
       - {x: 0.4602333, y: 0.4124139}
   m_UseDelaunayMesh: 0
+--- !u!114 &9022510645701025943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4891825685375671953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c30ba1905f3ace4abfbce151d56d1d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Text: This is a sign lol
