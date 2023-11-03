@@ -55,6 +55,9 @@ TagManager:
   - name: Sign
     uniqueID: 1201043863
     locked: 0
+  - name: Candle
+    uniqueID: 3474041463
+    locked: 0
   - name: BossAttacks
     uniqueID: 2778673589
     locked: 0

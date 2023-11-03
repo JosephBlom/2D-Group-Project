@@ -42,6 +42,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        
+        //animator.SetBool("Running", Mathf.Abs(rb2d.velocity.x) > Mathf.Epsilon);
+        animator.SetFloat("x", Mathf.Abs(rb2d.velocity.x)); 
         //Applying Movement.
         if (grounded || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
         {
