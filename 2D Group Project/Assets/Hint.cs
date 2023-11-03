@@ -8,8 +8,10 @@ using UnityEngine.UI;
 public class Hint : MonoBehaviour
 {
     public TextMeshProUGUI text;
+    public RectTransform backgroundImage;
     void Update()
     {
+        backgroundImage.sizeDelta = text.rectTransform.sizeDelta;
         RaycastHit2D ray = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward);
         if (ray)
         {
