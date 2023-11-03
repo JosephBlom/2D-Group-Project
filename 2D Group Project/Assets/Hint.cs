@@ -25,6 +25,7 @@ public class Hint : MonoBehaviour
                         tempText += "\n";
                     }
                     text.text = tempText;
+                    text.fontSize = ray.transform.GetComponent<Sign>().FontSize;
                     break;
             }
         }

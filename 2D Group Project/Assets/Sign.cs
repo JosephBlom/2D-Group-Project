@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class Sign : MonoBehaviour
 {
+    public float FontSize;
     public string Text;
 }
