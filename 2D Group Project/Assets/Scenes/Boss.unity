@@ -1563,7 +1563,7 @@ MonoBehaviour:
   Body: {fileID: 125944302}
   SegmentObject: {fileID: 5645915525677839302, guid: 8c29ab66fbe87784b94cdda728f2fa95, type: 3}
   Head: {fileID: 1914014355}
-  AttackEverySeconds: 10
+  AttackEverySeconds: 5
   AttackingSpots: []
   animator: {fileID: 125944303}
   directionY: 0
@@ -3719,8 +3719,8 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 2
-  m_MatchWidthOrHeight: 0
+  m_ScreenMatchMode: 1
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
