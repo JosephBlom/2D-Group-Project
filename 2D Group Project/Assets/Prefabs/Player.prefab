@@ -1346,8 +1346,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 31a08f9d2e1341346896f2766ff84233, type: 2}
+  m_sharedMaterial: {fileID: -7886006257806714604, guid: 31a08f9d2e1341346896f2766ff84233, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1602,6 +1602,14 @@ PrefabInstance:
     - target: {fileID: 397943696495399990, guid: 1864f8b94b625074f9fcc5c1500c0ab3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 695300512597895727, guid: 1864f8b94b625074f9fcc5c1500c0ab3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 575
+      objectReference: {fileID: 0}
+    - target: {fileID: 695300512597895727, guid: 1864f8b94b625074f9fcc5c1500c0ab3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.2508
       objectReference: {fileID: 0}
     - target: {fileID: 5709595066241854761, guid: 1864f8b94b625074f9fcc5c1500c0ab3, type: 3}
       propertyPath: m_Name
