@@ -11,5 +11,9 @@ public class DamageTrigger : MonoBehaviour
         {
             collision.GetComponent<PlayerHealth>().Health -= Damage;
         }
+        if (collision.CompareTag("Lantern"))
+        {
+            Destroy(transform.parent.gameObject);
+        }
     }
 }
