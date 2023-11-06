@@ -15,13 +15,14 @@ public class LeviathanScript : MonoBehaviour
     public Transform[] AttackingSpots;
     public Animator animator;
     public float directionY;
+    float nextTimeToFire = 10f;
+
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         GenerateLeviathan();
     }
 
-    float nextTimeToFire = 0;
     private void Update()
     {
         if (MovesWithoutAnim)
@@ -39,7 +40,7 @@ public class LeviathanScript : MonoBehaviour
             Head.transform.localScale = new Vector3(1, directInt, 1);
             Head.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
-        else if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        else if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") && !animator.GetCurrentAnimatorStateInfo(0).IsName("EnterScene"))
         {
             directionY = Player.transform.position.y - Head.transform.position.y;
 
