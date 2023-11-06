@@ -1603,37 +1603,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 695300512597895727, guid: 1864f8b94b625074f9fcc5c1500c0ab3, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1013.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 695300512597895727, guid: 1864f8b94b625074f9fcc5c1500c0ab3, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 572.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 695300512597895727, guid: 1864f8b94b625074f9fcc5c1500c0ab3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0875
-      objectReference: {fileID: 0}
-    - target: {fileID: 695300512597895727, guid: 1864f8b94b625074f9fcc5c1500c0ab3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 695300512597895727, guid: 1864f8b94b625074f9fcc5c1500c0ab3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.0047779
-      objectReference: {fileID: 0}
-    - target: {fileID: 695300512597895727, guid: 1864f8b94b625074f9fcc5c1500c0ab3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.00064659
-      objectReference: {fileID: 0}
     - target: {fileID: 5709595066241854761, guid: 1864f8b94b625074f9fcc5c1500c0ab3, type: 3}
       propertyPath: m_Name
       value: Pause
-      objectReference: {fileID: 0}
-    - target: {fileID: 5709595066241854761, guid: 1864f8b94b625074f9fcc5c1500c0ab3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6491648331604859552, guid: 1864f8b94b625074f9fcc5c1500c0ab3, type: 3}
       propertyPath: playerUI
