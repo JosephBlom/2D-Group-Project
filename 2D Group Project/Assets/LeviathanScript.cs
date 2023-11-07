@@ -16,6 +16,7 @@ public class LeviathanScript : MonoBehaviour
     public Animator animator;
     public float directionY;
     float nextTimeToFire = 10f;
+    public Animator canvasAnim;
 
     void Start()
     {
@@ -40,7 +41,7 @@ public class LeviathanScript : MonoBehaviour
             Head.transform.localScale = new Vector3(1, directInt, 1);
             Head.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
-        else if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") && !animator.GetCurrentAnimatorStateInfo(0).IsName("EnterScene"))
+        else if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") && !animator.GetCurrentAnimatorStateInfo(0).IsName("EnterScene") && !animator.GetCurrentAnimatorStateInfo(0).IsName("ShakeBody") && !animator.GetCurrentAnimatorStateInfo(0).IsName("DeadLev"))
         {
             directionY = Player.transform.position.y - Head.transform.position.y;
 
@@ -52,15 +53,19 @@ public class LeviathanScript : MonoBehaviour
                 animator.Play("Attack");
             }
         }
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("DeadLev"))
+        {
+            animator.enabled = false;
+            canvasAnim.Play("BlackBarsBack");
+        }
 
     }
 
     //Todo: Make attack an actual thing. NVM.
-    public IEnumerator Attack()
+    public void Attack()
     {
         foreach (Transform t in AttackingSpots)
         {
-            yield return new WaitForSeconds(AttackEverySeconds);
             animator.Play("Attack");
         }
 
@@ -91,6 +96,21 @@ public class LeviathanScript : MonoBehaviour
             {
                 temp.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             }
+        }
+    }
+
+    public void DegenerateLeviathan()
+    {
+        foreach (Transform t in Head.transform)
+        {
+            t.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            t.GetComponent<Rigidbody2D>().gravityScale = 0.6f;
+        }
+        foreach (Transform t in BodyParent)
+        {
+            animator.Play("ShakeBody");
+            t.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            t.GetComponent<Rigidbody2D>().gravityScale = 1;
         }
     }
 }
