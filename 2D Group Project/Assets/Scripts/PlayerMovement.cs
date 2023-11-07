@@ -75,6 +75,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Jumps = MaxJumps;
         }
+        if (Physics2D.Raycast(LeftArm.position, Vector2.left, DistanceFromFeet, 3).transform.CompareTag("ToggleDoor") && Input.GetKeyDown(KeyCode.E))
+        {
+            Physics2D.Raycast(LeftArm.position, Vector2.left, DistanceFromFeet, 3).transform.gameObject.SetActive(false);
+        }
     }
 
     void OnMove(InputValue value)
