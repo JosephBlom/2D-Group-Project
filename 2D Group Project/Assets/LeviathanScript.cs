@@ -61,16 +61,6 @@ public class LeviathanScript : MonoBehaviour
 
     }
 
-    //Todo: Make attack an actual thing. NVM.
-    public void Attack()
-    {
-        foreach (Transform t in AttackingSpots)
-        {
-            animator.Play("Attack");
-        }
-
-    }
-
     public void GenerateLeviathan()
     {
         Head.bodyType = RigidbodyType2D.Dynamic;
