@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Jumps = MaxJumps;
         }
-        if (leftArm)
+        if (leftArm && !leftArm.collider.transform.CompareTag("LevelBounds"))
         {
             if (leftArm.collider.transform.CompareTag("ToggleDoor") && Input.GetKeyDown(KeyCode.E))
             {
