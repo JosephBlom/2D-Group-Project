@@ -82,6 +82,13 @@ public class PlayerMovement : MonoBehaviour
                 leftArm.collider.transform.gameObject.SetActive(false);
             }
         }
+        if (rightArm)
+        {
+            if (rightArm.collider.transform.CompareTag("ToggleDoor") && Input.GetKeyDown(KeyCode.E))
+            {
+                rightArm.collider.transform.gameObject.SetActive(false);
+            }
+        }
     }
 
     void OnMove(InputValue value)
