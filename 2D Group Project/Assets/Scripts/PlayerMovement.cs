@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Calculating Raycast Booleans.
-        RaycastHit2D _hit = Physics2D.Raycast(feet.position, Vector2.down, DistanceFromFeet , 3);
+        RaycastHit2D _hit = Physics2D.Raycast(feet.position, Vector2.down, DistanceFromFeet, 3);
         RaycastHit2D leftArm = Physics2D.Raycast(LeftArm.position, Vector2.left, DistanceFromFeet, 3);
         RaycastHit2D rightArm = Physics2D.Raycast(RightArm.position, Vector2.right, DistanceFromFeet, 3);
         grounded = _hit;
@@ -75,9 +75,12 @@ public class PlayerMovement : MonoBehaviour
         {
             Jumps = MaxJumps;
         }
-        if (Physics2D.Raycast(LeftArm.position, Vector2.left, DistanceFromFeet, 3).transform.CompareTag("ToggleDoor") && Input.GetKeyDown(KeyCode.E))
+        if (leftArm)
         {
-            Physics2D.Raycast(LeftArm.position, Vector2.left, DistanceFromFeet, 3).transform.gameObject.SetActive(false);
+            if (leftArm.collider.transform.CompareTag("ToggleDoor") && Input.GetKeyDown(KeyCode.E))
+            {
+                leftArm.collider.transform.gameObject.SetActive(false);
+            }
         }
     }
 
