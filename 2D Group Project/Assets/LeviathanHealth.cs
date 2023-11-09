@@ -13,6 +13,7 @@ public class LeviathanHealth : MonoBehaviour
     private void Start()
     {
         Health.maxValue = health;
+        Health.value = health;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
