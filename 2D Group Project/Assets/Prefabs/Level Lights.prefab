@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 93719743518644552}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.9999639, w: -0.008502731}
-  m_LocalPosition: {x: -4.25, y: 1.7000008, z: -0.16067934}
+  m_LocalPosition: {x: -2.87, y: 1.7000008, z: -0.16067934}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Intensity: 0.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000c162174e9779964777aa11cfb5319fa529ed15e77596158c61864c393dffb4fb
+  m_ApplyToSortingLayers: 00000000c162174e9779964777aa11cfb5319fa529ed15e77596158c61864c393dffb4fb13f62d25
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -68,10 +68,10 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 36.999992
-  m_PointLightOuterAngle: 78.54545
+  m_PointLightInnerAngle: 76.44569
+  m_PointLightOuterAngle: 117.99114
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 15
+  m_PointLightOuterRadius: 7
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1

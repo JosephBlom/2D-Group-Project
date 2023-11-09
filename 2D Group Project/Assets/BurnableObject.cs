@@ -13,4 +13,12 @@ public class BurnableObject : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+    private void OnTriggerEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Lantern"))
+        {
+            Instantiate(fire, transform.position, transform.rotation);
+            Destroy(collision.gameObject);
+        }
+    }
 }

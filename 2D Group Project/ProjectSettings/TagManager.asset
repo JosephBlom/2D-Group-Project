@@ -14,6 +14,8 @@ TagManager:
   - Sign
   - ToggleDoor
   - LevelBounds
+  - Interact
+  - KeyCard
   layers:
   - Default
   - TransparentFX
@@ -63,6 +65,9 @@ TagManager:
   - name: BossAttacks
     uniqueID: 2778673589
     locked: 0
+  - name: Background Assets
+    uniqueID: 623769107
+    locked: 0
   - name: Toggle Door
     uniqueID: 4222943037
     locked: 0
@@ -71,6 +76,9 @@ TagManager:
     locked: 0
   - name: Water
     uniqueID: 2350225013
+    locked: 0
+  - name: Sprite Assets
+    uniqueID: 3587476379
     locked: 0
   - name: Platforms
     uniqueID: 961316449

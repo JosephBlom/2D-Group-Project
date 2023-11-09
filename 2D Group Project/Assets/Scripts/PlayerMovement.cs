@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     public int wallJumpSpeed = 25;
 
     public bool hasKey = false;
-
+    public GameObject spawnObject;
 
 
     void Start()
@@ -102,6 +102,22 @@ public class PlayerMovement : MonoBehaviour
                 rightArm.collider.transform.gameObject.SetActive(false);
             }
         }
+        if (leftArm && leftArm.collider.transform.CompareTag("Interact"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                GameObject spawnedObject = Instantiate(spawnObject, leftArm.collider.transform.position, Quaternion.identity);
+                Destroy(leftArm.collider.transform.gameObject);
+            }
+        }
+        if (rightArm && rightArm.collider.transform.CompareTag("Interact"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                GameObject spawnedObject = Instantiate(spawnObject, rightArm.collider.transform.position, Quaternion.identity);
+                Destroy(rightArm.collider.transform.gameObject);
+            }
+        }
     }
 
     void OnMove(InputValue value)
@@ -129,5 +145,14 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "KeyCard")
+        {
+            hasKey = true;
+            Destroy(collision.gameObject);
+        }
     }
 }
