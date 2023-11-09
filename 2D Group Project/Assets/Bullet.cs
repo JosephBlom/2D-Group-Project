@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public GameObject ParticleSystem1;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy") || collision.CompareTag("Player") || collision.CompareTag("Water"))
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Player") || collision.CompareTag("Water") || collision.CompareTag("LevelBounds"))
         {
             return;
         }
