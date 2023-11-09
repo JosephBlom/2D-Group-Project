@@ -17,6 +17,7 @@ public class LeviathanScript : MonoBehaviour
     public float directionY;
     float nextTimeToFire = 10f;
     public Animator canvasAnim;
+    public GameObject Boss;
 
     void Start()
     {
@@ -57,8 +58,15 @@ public class LeviathanScript : MonoBehaviour
         {
             animator.enabled = false;
             canvasAnim.Play("BlackBarsBack");
+            Invoke("OnDeath", 5);
         }
 
+    }
+
+    void OnDeath()
+    {
+        Boss.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     public void GenerateLeviathan()
