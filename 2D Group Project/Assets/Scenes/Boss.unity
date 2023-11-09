@@ -2106,7 +2106,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216751430}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d6dcd612a65c7c47a923b444ed5b992, type: 3}
   m_Name: 
@@ -2120,7 +2120,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216751430}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d6dcd612a65c7c47a923b444ed5b992, type: 3}
   m_Name: 
@@ -9493,7 +9493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1741294037
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9607,6 +9607,7 @@ MonoBehaviour:
   - {fileID: 1220603214}
   ActiveLevel: {fileID: 0}
   rb: {fileID: 1741294039}
+  CanGoUp: 0
   speed: 2
   Level: 0
 --- !u!61 &1741294041
