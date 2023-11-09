@@ -9,6 +9,12 @@ public class LeviathanHealth : MonoBehaviour
     public ParticleSystem Blood;
     public LeviathanScript LevScript;
     public Slider Health;
+
+    private void Start()
+    {
+        Health.maxValue = health;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Lantern"))
