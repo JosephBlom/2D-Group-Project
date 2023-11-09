@@ -129,24 +129,38 @@ public class PlayerMovement : MonoBehaviour
     {
         if (grounded || Swimming)
         {
+            animator.SetBool("Jump", true);
             rb2d.velocity += new Vector2(0f, jumpSpeed);
             return;
+        }
+        else
+        {
+            animator.SetBool("Jump", false);
         }
         if (sided && Jumps > 0)
         {
             Jumps--;
             if (left)
             {
+                animator.SetBool("Jump", true);
                 rb2d.velocity = new Vector2(-wallJumpSpeed, jumpSpeed);
             }
+            
             if (right)
             {
+                animator.SetBool("Jump", true);
                 rb2d.velocity = new Vector2(wallJumpSpeed, jumpSpeed);
             }
         }
 
     }
-
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            animator.SetBool("Jump", false);
+        }
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "KeyCard")
