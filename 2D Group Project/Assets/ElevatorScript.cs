@@ -9,12 +9,17 @@ public class ElevatorScript : MonoBehaviour
     public Transform[] Levels;
     public Transform ActiveLevel;
     public Rigidbody2D rb;
+    public bool CanGoUp;
     public float speed;
     public int Level = 0;
 
     private void Start()
     {
         ActiveLevel = transform;
+        rb.drag = 1;
+        rb.mass = 100;
+        rb.gravityScale = 0;
+        rb.freezeRotation = true;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -38,7 +43,7 @@ public class ElevatorScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && Level < Levels.Length - 1)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && Level < Levels.Length - 1 && CanGoUp)
         {
             Level++;
         }
