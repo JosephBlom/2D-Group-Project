@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4100759182250249084}
   - component: {fileID: 5927911692761108671}
   - component: {fileID: 894625844814158573}
+  - component: {fileID: 6545668472774998692}
   m_Layer: 0
   m_Name: ToggleDoor
   m_TagString: ToggleDoor
@@ -130,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6545668472774998692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2397498105958329226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1044c5f18fdd9e4bb16e8b69d3368b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needKey: 0

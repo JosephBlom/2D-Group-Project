@@ -35,8 +35,13 @@ public class PlayerMovement : MonoBehaviour
     public int jumpSpeed = 5;
     public int wallJumpSpeed = 25;
 
+    public bool hasKey = false;
+
+
+
     void Start()
     {
+        
         rb2d = GetComponent<Rigidbody2D>();
     }
 
@@ -75,17 +80,25 @@ public class PlayerMovement : MonoBehaviour
         {
             Jumps = MaxJumps;
         }
-        if (leftArm && !leftArm.collider.transform.CompareTag("LevelBounds"))
+        if (leftArm && leftArm.collider.transform.CompareTag("ToggleDoor"))
         {
-            if (leftArm.collider.transform.CompareTag("ToggleDoor") && Input.GetKeyDown(KeyCode.E))
+            bool needKey = leftArm.collider.GetComponent<keyNeeded>().needKey;
+            if (Input.GetKeyDown(KeyCode.E) && !needKey)
             {
                 leftArm.collider.transform.gameObject.SetActive(false);
             }
+            else if(Input.GetKeyDown(KeyCode.E) && hasKey){
+                leftArm.collider.transform.gameObject.SetActive(false);
+            }
         }
-        if (rightArm)
+        if (rightArm && rightArm.collider.transform.CompareTag("ToggleDoor"))
         {
-            if (rightArm.collider.transform.CompareTag("ToggleDoor") && Input.GetKeyDown(KeyCode.E))
+            bool needKey = rightArm.collider.GetComponent<keyNeeded>().needKey;
+            if (Input.GetKeyDown(KeyCode.E) && !needKey)
             {
+                rightArm.collider.transform.gameObject.SetActive(false);
+            }
+            else if(Input.GetKeyDown(KeyCode.E) && hasKey){
                 rightArm.collider.transform.gameObject.SetActive(false);
             }
         }
