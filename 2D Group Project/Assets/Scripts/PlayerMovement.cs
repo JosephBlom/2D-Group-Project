@@ -37,11 +37,14 @@ public class PlayerMovement : MonoBehaviour
 
     public bool hasKey = false;
     public GameObject spawnObject;
+    public ElevatorScript elevatorScript;
+    public LightFlicker lightFlicker;
+
+    static int secretCount = 0; 
 
 
     void Start()
     {
-        
         rb2d = GetComponent<Rigidbody2D>();
     }
 
@@ -110,12 +113,28 @@ public class PlayerMovement : MonoBehaviour
                 Destroy(leftArm.collider.transform.gameObject);
             }
         }
+        else if (leftArm && leftArm.collider.transform.CompareTag("Generator"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                elevatorScript.CanGoUp = true;
+                lightFlicker.powerOn = true;
+            }
+        }
         if (rightArm && rightArm.collider.transform.CompareTag("Interact"))
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 GameObject spawnedObject = Instantiate(spawnObject, rightArm.collider.transform.position, Quaternion.identity);
                 Destroy(rightArm.collider.transform.gameObject);
+            }
+        }
+        else if (rightArm && rightArm.collider.transform.CompareTag("Generator"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                elevatorScript.CanGoUp = true;
+                lightFlicker.powerOn = true;
             }
         }
     }
@@ -167,6 +186,10 @@ public class PlayerMovement : MonoBehaviour
         {
             hasKey = true;
             Destroy(collision.gameObject);
+        }
+        else if(collision.gameObject.tag == "Secret"){
+            Destroy(collision.gameObject);
+            secretCount += 1;
         }
     }
 }

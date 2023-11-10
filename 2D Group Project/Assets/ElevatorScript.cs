@@ -13,7 +13,7 @@ public class ElevatorScript : MonoBehaviour
     public float speed;
     public int Level = 0;
 
-    private void Start()
+    void Start()
     {
         ActiveLevel = transform;
         rb.drag = 1;
@@ -22,7 +22,7 @@ public class ElevatorScript : MonoBehaviour
         rb.freezeRotation = true;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
@@ -41,7 +41,7 @@ public class ElevatorScript : MonoBehaviour
         }
     }
 
-    private void Update()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow) && Level < Levels.Length - 1 && CanGoUp)
         {

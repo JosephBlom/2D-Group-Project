@@ -8,8 +8,11 @@ public class LightFlicker : MonoBehaviour
     int num;
     float flickerTime;
     public GameObject selectedLight;
+    public bool powerOn = false;
+
     void Start()
     {
+        powerOn = false;
         reRun();
     }
 
@@ -17,18 +20,21 @@ public class LightFlicker : MonoBehaviour
     {
 
     }
+
     IEnumerator FlickerLights()
     {
-        num = Random.Range(1, 100);
-        Debug.Log(num);
-        if (num <= frequency)
+        if(!powerOn)
         {
-            selectedLight.SetActive(false);
-        }
-        flickerTime = Random.Range(0.1f, 1f);
-        yield return new WaitForSeconds(flickerTime);
+            num = Random.Range(1, 100);
+            if (num <= frequency)
+            {
+                selectedLight.SetActive(false);
+            }
+            flickerTime = Random.Range(0.1f, 1f);
+            yield return new WaitForSeconds(flickerTime);
 
-        selectedLight.SetActive(true);
+            selectedLight.SetActive(true);
+        }
         reRun();
     }
     void reRun()

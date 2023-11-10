@@ -16,6 +16,8 @@ TagManager:
   - LevelBounds
   - Interact
   - KeyCard
+  - Generator
+  - Secret
   layers:
   - Default
   - TransparentFX
