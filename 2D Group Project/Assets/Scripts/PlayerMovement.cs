@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject spawnObject;
     public ElevatorScript elevatorScript;
     static int secretCount = 0; 
+    public Sprite spriteSwap;
 
 
     void Start()
@@ -131,6 +132,8 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 elevatorScript.CanGoUp = true;
+                SpriteRenderer spriteRenderer = rightArm.collider.GetComponent<SpriteRenderer>();
+                spriteRenderer.Sprite = spriteSwap;
             }
         }
     }
