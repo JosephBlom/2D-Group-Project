@@ -41,12 +41,14 @@ public class PlayerMovement : MonoBehaviour
     static int secretCount = 0; 
     public GameObject Generator;
     SpriteRenderer spriteRenderer;
+    Generator generator;
     public Sprite spriteSwap;
 
 
     void Start()
     {
         spriteRenderer = Generator.GetComponent<SpriteRenderer>();
+        generator = Generator.GetComponent<Generator>();
         rb2d = GetComponent<Rigidbody2D>();
     }
 
@@ -120,6 +122,8 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 elevatorScript.CanGoUp = true;
+                generator.on = true;
+                spriteRenderer.sprite = spriteSwap;
             }
         }
         if (rightArm && rightArm.collider.transform.CompareTag("Interact"))
@@ -135,6 +139,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 elevatorScript.CanGoUp = true;
+                generator.on = true;
                 spriteRenderer.sprite = spriteSwap;
             }
         }
