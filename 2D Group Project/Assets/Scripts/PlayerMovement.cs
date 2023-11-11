@@ -43,6 +43,10 @@ public class PlayerMovement : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Generator generator;
     public Sprite spriteSwap;
+    //Ladder Stuff
+    public int climbSpeed = 5;
+    float startGravity;
+    CapsuleCollider2D myCapsuleCollider;
 
 
     void Start()
@@ -50,6 +54,8 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = Generator.GetComponent<SpriteRenderer>();
         generator = Generator.GetComponent<Generator>();
         rb2d = GetComponent<Rigidbody2D>();
+        myCapsuleCollider = GetComponent<CapsuleCollider2D>();
+        startGravity = rb2d.gravityScale;
     }
 
     void Update()
@@ -143,6 +149,7 @@ public class PlayerMovement : MonoBehaviour
                 spriteRenderer.sprite = spriteSwap;
             }
         }
+        climbLadder();
     }
 
     void OnMove(InputValue value)
@@ -197,5 +204,14 @@ public class PlayerMovement : MonoBehaviour
             Destroy(collision.gameObject);
             secretCount += 1;
         }
+    }
+    void climbLadder(){
+        if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"))) { rb2d.gravityScale = startGravity; return; }
+
+        Vector2 climbVelocity = new Vector2(rb2d.velocity.x, climbSpeed);
+        rb2d.gravityScale = 0f;
+        rb2d.velocity = climbVelocity;
+
+        bool playerHasVerticalSpeed = Mathf.Abs(rb2d.velocity.y) > Mathf.Epsilon;
     }
 }
