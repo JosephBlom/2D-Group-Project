@@ -38,8 +38,6 @@ public class PlayerMovement : MonoBehaviour
     public bool hasKey = false;
     public GameObject spawnObject;
     public ElevatorScript elevatorScript;
-    public LightFlicker lightFlicker;
-
     static int secretCount = 0; 
 
 
@@ -118,7 +116,6 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 elevatorScript.CanGoUp = true;
-                lightFlicker.powerOn = true;
             }
         }
         if (rightArm && rightArm.collider.transform.CompareTag("Interact"))
@@ -134,7 +131,6 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 elevatorScript.CanGoUp = true;
-                lightFlicker.powerOn = true;
             }
         }
     }

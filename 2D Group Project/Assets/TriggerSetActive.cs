@@ -6,35 +6,58 @@ public class TriggerSetActive : MonoBehaviour
 {
     public GameObject[] TurnOff;
     public GameObject[] TurnOn;
+    public bool editTrigger = false;
     public bool OnTriggerEnter = true;
-    private void OnTriggerEnter2D(Collider2D collision)
+    public bool runTrigger = true;
+    public bool stopOrGo = false;
+    public GameObject SelectedTrigger;
+    TriggerSetActive triggerScript;
+
+    void Start()
     {
-        if (!OnTriggerEnter) { return; }
-        if (collision.CompareTag("Player"))
-        {
-            foreach(GameObject g in TurnOff)
-            {
-                g.SetActive(false);
-            }
-            foreach (GameObject g in TurnOn)
-            {
-                g.SetActive(true);
-            }
-        }
+        triggerScript = SelectedTrigger.GetComponent<TriggerSetActive>();
     }
-    private void OnTriggerExit2D(Collider2D collision)
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (OnTriggerEnter) { return; }
-        if (collision.CompareTag("Player"))
+        if(runTrigger)
         {
-            foreach (GameObject g in TurnOff)
+            if(editTrigger)
             {
-                g.SetActive(false);
+                triggerScript.runTrigger = stopOrGo;
             }
-            foreach (GameObject g in TurnOn)
+            if (!OnTriggerEnter) { return; }
+            if (collision.CompareTag("Player"))
             {
-                g.SetActive(true);
+                foreach(GameObject g in TurnOff)
+                {
+                    g.SetActive(false);
+                }
+                foreach (GameObject g in TurnOn)
+                {
+                    g.SetActive(true);
+                }
             }
         }
+        
+    }
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if(runTrigger)
+        {
+            if (OnTriggerEnter) { return; }
+            if (collision.CompareTag("Player"))
+            {
+                foreach (GameObject g in TurnOff)
+                {
+                    g.SetActive(false);
+                }
+                foreach (GameObject g in TurnOn)
+                {
+                    g.SetActive(true);
+                }
+            }
+        }
+        
     }
 }
