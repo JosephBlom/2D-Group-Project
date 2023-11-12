@@ -18,7 +18,6 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        npcName.text = dialogue.name;
 
         sentences.Clear();
 
@@ -31,10 +30,17 @@ public class DialogueManager : MonoBehaviour
     }
     public void DisplayNextSentence()
     {
+        
         if(sentences.Count == 0)
         {
             EndDialogue();
             return;
+        }
+        if(sentences.Count % 2 != 0){
+            npcName.text = "Mom";
+        }
+        else{
+            npcName.text = "Dad";
         }
 
         string sentence = sentences.Dequeue();
