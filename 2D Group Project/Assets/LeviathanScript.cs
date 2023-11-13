@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-
 public class LeviathanScript : MonoBehaviour
 {
     public GameObject Player;
