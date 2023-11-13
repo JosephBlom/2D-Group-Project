@@ -18,6 +18,7 @@ public class LeviathanScript : MonoBehaviour
     float nextTimeToFire = 10f;
     public Animator canvasAnim;
     public GameObject Boss;
+    public LeviathanHealth health;
 
     void Start()
     {
@@ -54,7 +55,7 @@ public class LeviathanScript : MonoBehaviour
                 animator.Play("Attack");
             }
         }
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("DeadLev"))
+        if (health.health <= 0)
         {
             animator.enabled = false;
             canvasAnim.Play("BlackBarsBack");

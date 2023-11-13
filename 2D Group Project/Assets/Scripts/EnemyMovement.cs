@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
 {
 
     public GameObject player;
+    public float RayDistance;
     public float chaseSpeed = 2.0f;
     public float chaseTriggerDistance = 3.0f;
     private Vector3 startPosition;
@@ -41,7 +42,8 @@ public class EnemyMovement : MonoBehaviour
 
             chaseDirection.y = 0f;
             chaseDirection.Normalize();
-            if (capsuleCollider.CompareTag("Ground"))
+            RaycastHit2D _hit = Physics2D.Raycast(transform.position, Vector2.down, RayDistance, 3);
+            if (_hit)
             {
                 GetComponent<Rigidbody2D>().velocity = chaseDirection * chaseSpeed;
             }
