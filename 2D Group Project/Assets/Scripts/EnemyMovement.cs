@@ -77,6 +77,15 @@ public class EnemyMovement : MonoBehaviour
             paceDirection.Normalize();
             GetComponent<Rigidbody2D>().velocity = paceDirection * chaseSpeed;
         }
+        switch (GetComponent<Rigidbody2D>().velocity.x)
+        {
+            case > 0:
+                GetComponent<SpriteRenderer>().flipX = true;
+                break;
+            case < 0:
+                GetComponent<SpriteRenderer>().flipX = false;
+                break;
+        }
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
