@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     public int MaxHealth;
     public TextMeshProUGUI text;
     public ParticleSystem Blood;
+    EnemyDamage Damage;
     private void Start()
     {
         lastHealth = Health;
@@ -35,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if(collision.gameObject.tag == "BugEnemy")
         {
             Health -= 5;
         }

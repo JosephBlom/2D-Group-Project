@@ -19,6 +19,7 @@ TagManager:
   - Generator
   - Secret
   - LightsBasement
+  - BugEnemy
   layers:
   - Default
   - TransparentFX
@@ -71,20 +72,23 @@ TagManager:
   - name: Background Assets
     uniqueID: 623769107
     locked: 0
-  - name: Toggle Door
-    uniqueID: 4222943037
+  - name: Enemies
+    uniqueID: 3130626611
     locked: 0
   - name: Player
     uniqueID: 3876973865
+    locked: 0
+  - name: Platforms
+    uniqueID: 961316449
+    locked: 0
+  - name: Toggle Door
+    uniqueID: 4222943037
     locked: 0
   - name: Water
     uniqueID: 2350225013
     locked: 0
   - name: Sprite Assets
     uniqueID: 3587476379
-    locked: 0
-  - name: Platforms
-    uniqueID: 961316449
     locked: 0
   - name: Particles
     uniqueID: 1956067939
