@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -9,16 +10,21 @@ public class DialogueManager : MonoBehaviour
 
     public TextMeshProUGUI npcText;
     public TextMeshProUGUI npcName;
-
+    public AudioSource audioSource;
+    public AudioClip Clip;
+    public GameObject continueButton;
 
     void Start()
     {
+        npcName.text = "";
+        npcText.text = "";
+        continueButton.SetActive(false);
         sentences = new Queue<string>();
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
-
+        continueButton.SetActive(true);
         sentences.Clear();
 
         foreach(string sentence in dialogue.sentences)
@@ -31,19 +37,21 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence()
     {
         
+        string sentence = sentences.Dequeue();
         if(sentences.Count == 0)
         {
-            EndDialogue();
+            npcName.text = "Mom";
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(sentence));
             return;
         }
         if(sentences.Count % 2 != 0){
-            npcName.text = "Mom";
-        }
-        else{
             npcName.text = "Dad";
         }
+        else{
+            npcName.text = "Mom";
+        }
 
-        string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
@@ -56,9 +64,16 @@ public class DialogueManager : MonoBehaviour
             npcText.text += letter;
             yield return null;
         }
+        if(sentences.Count == 0){
+            EndDialogue();
+        }
     }
 
     void EndDialogue(){
-        Debug.Log("End of the conversation");
+        continueButton.SetActive(false);
+        audioSource.Stop();
+        audioSource.clip = Clip;
+        audioSource.loop = false;
+        audioSource.Play();
     }
 }
