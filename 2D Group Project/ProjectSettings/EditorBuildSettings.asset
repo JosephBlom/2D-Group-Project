@@ -11,4 +11,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Intro.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Cave.unity
+    guid: 67e59328fcc4e5448abb2264484f804e
+  - enabled: 1
+    path: Assets/Scenes/Cave(Level 1).unity
+    guid: b15ab0acd13988d4996622bd1eaef1e8
+  - enabled: 1
+    path: Assets/Scenes/Hospital (Level 2).unity
+    guid: fc5ebd7b2cbf7d84b88ceb9a62fb3ec3
+  - enabled: 1
+    path: Assets/Scenes/Boss.unity
+    guid: 5e9a5d79532443647927ac4c5b97135d
+  - enabled: 1
+    path: Assets/Scenes/PauseMenu.unity
+    guid: ec3409054e14d064a8572a9e969221a3
   m_configObjects: {}
