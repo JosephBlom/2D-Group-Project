@@ -12,12 +12,18 @@ public class EnemyMovement : MonoBehaviour
     public float chaseTriggerDistance = 3.0f;
     private Vector3 startPosition;
     private bool home = true;
-    public Vector3 paceDirection = new Vector3(0f, 0f, 0f);
+    public Vector2 paceDirection = new Vector2(0f, 0f);
     public float paceDistance = 3.0f;
+    public float jumpSpeed;
+    public bool jumping = false;
+    CapsuleCollider2D capsuleCollider;
+    float gravity;
     // Use this for initialization
     void Start()
     {
         //get the spawn position so we know how to get home
+        gravity = GetComponent<Rigidbody2D>().gravityScale;
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
         startPosition = transform.position;
     }
 
@@ -25,18 +31,23 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         float verticalVelocity = GetComponent<Rigidbody2D>().velocity.y;
-        Vector3 playerPosition = player.transform.position;
-        Vector2 chaseDirection = new Vector2(playerPosition.x - transform.position.x, playerPosition.y - transform.position.y);
-        if (chaseDirection.magnitude < chaseTriggerDistance)
+        verticalVelocity = gravity;
+        Vector2 playerPosition = player.transform.position;
+        Vector2 chaseDirection = new Vector2(playerPosition.x - transform.position.x, 0);
+        if (chaseDirection.magnitude < chaseTriggerDistance && !jumping)
         {
             //player gets too close to the enemy
             home = false;
 
             chaseDirection.y = 0f;
             chaseDirection.Normalize();
-            GetComponent<Rigidbody2D>().velocity = chaseDirection * chaseSpeed;
+            if (capsuleCollider.CompareTag("Ground"))
+            {
+                GetComponent<Rigidbody2D>().velocity = chaseDirection * chaseSpeed;
+            }
+           
         }
-        else if (home == false)
+        else if (home == false && !jumping)
         {
             Vector2 homeDirection = new Vector2(startPosition.x - transform.position.x, startPosition.y - transform.position.y);
             if (homeDirection.magnitude < 0.3f)
@@ -52,7 +63,7 @@ public class EnemyMovement : MonoBehaviour
                 GetComponent<Rigidbody2D>().velocity = homeDirection * chaseSpeed;
             }
         }
-        else
+        else if(!jumping)
         {
             Vector3 displacement = transform.position - startPosition;
             float distanceFromStart = displacement.magnitude;
@@ -64,5 +75,14 @@ public class EnemyMovement : MonoBehaviour
             paceDirection.Normalize();
             GetComponent<Rigidbody2D>().velocity = paceDirection * chaseSpeed;
         }
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        jumping = true;
+        GetComponent<Rigidbody2D>().velocity += new Vector2(0f, jumpSpeed);
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        jumping = false;
     }
 }

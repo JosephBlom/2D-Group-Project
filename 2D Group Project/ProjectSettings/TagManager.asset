@@ -74,6 +74,9 @@ TagManager:
   - name: Toggle Door
     uniqueID: 4222943037
     locked: 0
+  - name: Enemies
+    uniqueID: 3130626611
+    locked: 0
   - name: Player
     uniqueID: 3876973865
     locked: 0
