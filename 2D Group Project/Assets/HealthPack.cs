@@ -5,6 +5,7 @@ using UnityEngine;
 public class HealthPack : MonoBehaviour
 {
     public float Timer = 2;
+    public Transform[] SpawningSpots;
     float nextTimeToFire = 0;
     public SpriteRenderer spriteRend;
     private void OnTriggerEnter2D(Collider2D collision)
@@ -15,6 +16,7 @@ public class HealthPack : MonoBehaviour
             {
                 nextTimeToFire = Time.time + Timer;
                 collision.GetComponent<PlayerHealth>().Health += 10;
+                transform.position = SpawningSpots[Random.Range(0, SpawningSpots.Length)].position;
             }
         }
     }
