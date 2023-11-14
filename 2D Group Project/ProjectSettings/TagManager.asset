@@ -78,6 +78,9 @@ TagManager:
   - name: Player
     uniqueID: 3876973865
     locked: 0
+  - name: Sprite Assets
+    uniqueID: 3587476379
+    locked: 0
   - name: Platforms
     uniqueID: 961316449
     locked: 0
@@ -86,9 +89,6 @@ TagManager:
     locked: 0
   - name: Water
     uniqueID: 2350225013
-    locked: 0
-  - name: Sprite Assets
-    uniqueID: 3587476379
     locked: 0
   - name: Particles
     uniqueID: 1956067939
