@@ -99,10 +99,11 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D _hit = Physics2D.Raycast(feet.position, Vector2.down, DistanceFromFeet, 3);
         RaycastHit2D leftArm = Physics2D.Raycast(LeftArm.position, Vector2.left, DistanceFromFeet, 3);
         RaycastHit2D rightArm = Physics2D.Raycast(RightArm.position, Vector2.right, DistanceFromFeet, 3);
-        grounded = _hit;
+        grounded = _hit && _hit.collider.transform.tag != "Foot";
         sided = leftArm || rightArm;
         left = leftArm;
         right = rightArm;
+        //Debug.Log("we hit " + _hit.collider.gameObject.name);
         if (grounded)
         {
             Jumps = MaxJumps;

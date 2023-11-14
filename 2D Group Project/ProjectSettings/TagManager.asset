@@ -20,6 +20,7 @@ TagManager:
   - Secret
   - LightsBasement
   - BugEnemy
+  - Foot
   layers:
   - Default
   - TransparentFX
