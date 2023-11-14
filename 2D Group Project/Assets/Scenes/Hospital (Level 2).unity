@@ -11187,6 +11187,7 @@ GameObject:
   - component: {fileID: 793986898}
   - component: {fileID: 793986897}
   - component: {fileID: 793986896}
+  - component: {fileID: 793986901}
   m_Layer: 0
   m_Name: Hidden Room
   m_TagString: Untagged
@@ -12186,6 +12187,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &793986901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793986894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92ca24904c22664c88f4abf36174dff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &799687160
 PrefabInstance:
   m_ObjectHideFlags: 0
