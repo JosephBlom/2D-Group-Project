@@ -16,7 +16,10 @@ public class HealthPack : MonoBehaviour
             {
                 nextTimeToFire = Time.time + Timer;
                 collision.GetComponent<PlayerHealth>().Health += 10;
-                transform.position = SpawningSpots[Random.Range(0, SpawningSpots.Length)].position;
+                if(SpawningSpots.Length > 0)
+                {
+                    transform.position = SpawningSpots[Random.Range(0, SpawningSpots.Length)].position;
+                }
             }
         }
     }

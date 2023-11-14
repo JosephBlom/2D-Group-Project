@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,9 @@ public class Player_UI : MonoBehaviour
     public Slider LanternSlider;
     public Slider BossHealthSlider;
     public BossLogic BossStats;
+    public TextMeshProUGUI timeText;
+    public TextMeshProUGUI totalTimeText;
+    bool time = false;
     bool bossHere;
     void Start()
     {
@@ -20,6 +24,14 @@ public class Player_UI : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            time = !time;
+        }
+        timeText.gameObject.SetActive(time);
+        totalTimeText.gameObject.SetActive(time);
+        timeText.text = "Time This Level: " + Time.timeSinceLevelLoad.ToString("0.00");
+        totalTimeText.text = "Total Time: " + Time.time.ToString("0.00");
         LanternSlider.value = -(Time.time - playerShoot.fireTime);
         LanternSlider.maxValue = playerShoot.timer;
         BossHurt();
