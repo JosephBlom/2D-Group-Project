@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7181324719781191143}
   - component: {fileID: 4496874330751130785}
   - component: {fileID: 8213185173597292187}
+  - component: {fileID: 5495368593621840512}
   m_Layer: 0
   m_Name: BugEnemy
-  m_TagString: Untagged
+  m_TagString: BugEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1164340685
-  m_SortingLayer: 7
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 961017374, guid: e6ddeb2865b5d6442bbc670b95466522, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -180,3 +181,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5495368593621840512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3113752029445004845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b542c27455d64d84491b383c78257a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 9056528966423766267, guid: 82cb9686ae541c947a56a389b96b9a58, type: 3}
+  BugHealth: 1
+  ZombieHealth: 2
