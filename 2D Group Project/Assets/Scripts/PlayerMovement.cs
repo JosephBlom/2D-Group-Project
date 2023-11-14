@@ -76,6 +76,14 @@ public class PlayerMovement : MonoBehaviour
             rb2d.velocity = Vector2.zero;
         }
 
+        if (rb2d.velocity.x == moveSpeed || rb2d.velocity.x == -moveSpeed && grounded)
+        {
+            if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+            {
+                rb2d.velocity = Vector2.zero;
+            }
+        }
+
         //Flipping Sprite Based On Velocity.
         switch (rb2d.velocity.x)
         {
