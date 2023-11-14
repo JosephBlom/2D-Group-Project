@@ -56,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         myCapsuleCollider = GetComponent<CapsuleCollider2D>();
         startGravity = rb2d.gravityScale;
+        Time.timeScale = 1;    
     }
 
     void Update()
