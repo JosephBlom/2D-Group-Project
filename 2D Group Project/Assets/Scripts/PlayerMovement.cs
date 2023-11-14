@@ -62,12 +62,17 @@ public class PlayerMovement : MonoBehaviour
     {
         
         //animator.SetBool("Running", Mathf.Abs(rb2d.velocity.x) > Mathf.Epsilon);
-        animator.SetFloat("x", Mathf.Abs(rb2d.velocity.x)); 
+        animator.SetFloat("x", Mathf.Abs(rb2d.velocity.x));
         //Applying Movement.
-        if (grounded || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
         {
             Vector2 playerVelocity = new Vector2(moveInput.x * moveSpeed, rb2d.velocity.y);
             rb2d.velocity = playerVelocity;
+        }
+        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
+        {
+            if(grounded)
+            rb2d.velocity = Vector2.zero;
         }
 
         //Flipping Sprite Based On Velocity.
