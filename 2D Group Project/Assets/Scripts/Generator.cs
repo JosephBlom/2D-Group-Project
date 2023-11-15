@@ -8,6 +8,7 @@ public class Generator : MonoBehaviour
     public GameObject prefab;
     public GameObject[] lights;
     public GameObject[] spawnPoints;
+    bool spawned = false;
 
     void Start()
     {
@@ -23,9 +24,13 @@ public class Generator : MonoBehaviour
             foreach (GameObject i in lights){
                 i.SetActive(true);
             }
-            foreach(GameObject i in spawnPoints)
+            if (!spawned)
             {
-                Instantiate(prefab,i.transform.position, Quaternion.identity);
+                foreach (GameObject i in spawnPoints)
+                {
+                    Instantiate(prefab, i.transform.position, Quaternion.identity);
+                    spawned = true;
+                }
             }
         }
     }
