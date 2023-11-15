@@ -40,6 +40,10 @@ public class PlayerHealth : MonoBehaviour
         {
             Health -= 5;
         }
+        else if(collision.gameObject.tag == "ZombieEnemy")
+        {
+            Health -= 8;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
