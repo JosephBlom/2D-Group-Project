@@ -25,7 +25,8 @@ public class Generator : MonoBehaviour
             }
             foreach(GameObject i in spawnPoints)
             {
-                Instantiate(prefab,i.transform.position, Quaternion.identity);
+                GameObject temp = Instantiate(prefab,i.transform.position, Quaternion.identity);
+                temp.GetComponent<EnemyMovement>().player = GameObject.FindGameObjectWithTag("Player");
             }
         }
     }
