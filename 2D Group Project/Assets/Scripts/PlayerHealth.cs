@@ -41,6 +41,13 @@ public class PlayerHealth : MonoBehaviour
             Health -= 5;
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "BugEnemy")
+        {
+            Health -= 5;
+        }
+    }
 
     void Die()
     {
