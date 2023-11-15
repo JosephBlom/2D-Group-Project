@@ -11,8 +11,8 @@ public class EnemyMovement : MonoBehaviour
     public float RayDistance;
     public float chaseSpeed = 2.0f;
     public float chaseTriggerDistance = 3.0f;
-    private Vector3 startPosition;
-    private bool home = true;
+    public Vector3 startPosition;
+    public bool home = true;
     public Vector2 paceDirection = new Vector2(0f, 0f);
     public float paceDistance = 3.0f;
     public float jumpSpeed;
@@ -53,6 +53,7 @@ public class EnemyMovement : MonoBehaviour
         else if (home == false && !jumping)
         {
             Vector2 homeDirection = new Vector2(startPosition.x - transform.position.x, startPosition.y - transform.position.y);
+            //Vector2 homeDirection = new Vector2(transform.position.x - startPosition.x, transform.position.y - startPosition.y);
             if (homeDirection.magnitude < 0.3f)
             {
                 //we've arrived home
@@ -63,9 +64,8 @@ public class EnemyMovement : MonoBehaviour
             else
             {
                 //go home
-                homeDirection.Normalize();
                 animator.SetBool("Walking", true);
-                GetComponent<Rigidbody2D>().velocity = homeDirection * chaseSpeed;
+                GetComponent<Rigidbody2D>().velocity = homeDirection.normalized * chaseSpeed;
             }
         }
         else if(!jumping)
@@ -92,11 +92,17 @@ public class EnemyMovement : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        jumping = true;
-        GetComponent<Rigidbody2D>().velocity += new Vector2(0f, jumpSpeed);
+        if (collision.CompareTag("Ground"))
+        {
+            jumping = true;
+            GetComponent<Rigidbody2D>().velocity += new Vector2(0f, jumpSpeed);
+        }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        jumping = false;
+        if (collision.transform.CompareTag("Ground"))
+        {
+            jumping = false;
+        }
     }
 }
