@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4744637763469301390}
-  player: {fileID: 0}
+  player: {fileID: 8024739542792494803, guid: b44d0ceb91ef621498fc880ef301b5ea, type: 3}
   RayDistance: 0
   chaseSpeed: 3
   chaseTriggerDistance: 7
