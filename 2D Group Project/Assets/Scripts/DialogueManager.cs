@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -36,25 +37,35 @@ public class DialogueManager : MonoBehaviour
     }
     public void DisplayNextSentence()
     {
-        
-        string sentence = sentences.Dequeue();
-        if(sentences.Count == 0)
+        if(sentences.Count > 0)
         {
-            npcName.text = "Mom";
+            string sentence = sentences.Dequeue();
+            if (sentences.Count == 0)
+            {
+                npcName.text = "Mom";
+                StopAllCoroutines();
+                StartCoroutine(TypeSentence(sentence));
+                return;
+            }
+            if (sentences.Count % 2 != 0)
+            {
+                npcName.text = "Dad";
+            }
+            else
+            {
+                npcName.text = "Mom";
+            }
+
             StopAllCoroutines();
             StartCoroutine(TypeSentence(sentence));
-            return;
         }
-        if(sentences.Count % 2 != 0){
-            npcName.text = "Dad";
+        else
+        {
+            int scene = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(scene + 1);
         }
-        else{
-            npcName.text = "Mom";
-        }
-
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
     }
+        
 
     IEnumerator TypeSentence (string sentence)
     {
