@@ -118752,7 +118752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550ada4990bbe6349bbba6082c4ed0e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 10
   Blood: {fileID: 324883297}
   LevScript: {fileID: 125944301}
   Health: {fileID: 644819201}
@@ -118875,6 +118875,7 @@ MonoBehaviour:
   Name: Big Boss
   animator: {fileID: 1808973401}
   health: 300
+  meatBallSpeed: 18
 --- !u!61 &1942880686
 BoxCollider2D:
   m_ObjectHideFlags: 0

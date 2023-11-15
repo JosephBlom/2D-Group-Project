@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,7 +14,7 @@ public class MainBoss : MonoBehaviour
     public Vector3 Offset;
     public bool Attack1;
     public float attackDelay;
-    float nextTimeToFire;
+    float nextTimeToFire = 3;
     public float directionX;
     public float speed;
     public Slider slider;
@@ -25,7 +26,8 @@ public class MainBoss : MonoBehaviour
     int i;
     int chosenMove;
     Vector3 shootDirection;
-    void Start()
+    float timer;
+    void Start() 
     {
         Player = GameObject.FindWithTag("Player").transform;
         slidertext.text = name;
@@ -36,14 +38,6 @@ public class MainBoss : MonoBehaviour
         
     }
 
-    void Attack()
-    {
-        shootDirection = Player.position - transform.position;
-        shootDirection.Normalize();
-        GameObject meatBall = Instantiate(MeatBall, transform.position + Offset, Quaternion.identity);
-        meatBall.GetComponent<Rigidbody2D>().velocity = shootDirection * meatBallSpeed;
-        StartCoroutine(move());
-    }
 
     void Update()
     {
@@ -51,18 +45,19 @@ public class MainBoss : MonoBehaviour
         if (Attack1)
         {
             Attack1 = false;
-            Attack();
+            StartCoroutine(Attack());
         }
-        if (Time.time > nextTimeToFire)
+        if (timer >= nextTimeToFire)
         {
-            nextTimeToFire = Time.time + attackDelay;
-            Attack();
+            timer = 0;
+            StartCoroutine(Attack());
         }
         
         if (health <= 0)
         {
             Die();
         }
+        timer += Time.deltaTime;
     }
 
     void Die()
@@ -73,10 +68,24 @@ public class MainBoss : MonoBehaviour
         SceneManager.LoadScene(scene + 1);
     }
 
-    IEnumerator move()
+    IEnumerator Attack()
     {
-        yield return new WaitForSeconds(10000);
+        yield return new WaitForSeconds(nextTimeToFire);
+        shootDirection = Player.position - transform.position;
+        shootDirection.Normalize();
+        GameObject meatBall = Instantiate(MeatBall, transform.position, Quaternion.identity);
+        meatBall.GetComponent<Rigidbody2D>().velocity = shootDirection * meatBallSpeed;
+        yield return new WaitForSeconds(0.3f);
         chosenMove = Random.Range(1, i - 1);
         transform.position = bossMoves[chosenMove].transform.position;
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Lantern"))
+        {
+            health -= 30;
+        }
     }
 }
