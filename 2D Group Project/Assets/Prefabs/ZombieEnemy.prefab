@@ -81,9 +81,10 @@ GameObject:
   - component: {fileID: 8390459781078924621}
   - component: {fileID: 9208276433659794985}
   - component: {fileID: 5035972630573723256}
+  - component: {fileID: 4906774607021671018}
   m_Layer: 0
   m_Name: ZombieEnemy
-  m_TagString: Untagged
+  m_TagString: ZombieEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -272,3 +273,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.6666667, y: 0.7638836}
   m_EdgeRadius: 0
+--- !u!114 &4906774607021671018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3668670089049584969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b542c27455d64d84491b383c78257a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 9056528966423766267, guid: 82cb9686ae541c947a56a389b96b9a58, type: 3}
+  BugHealth: 1
+  ZombieHealth: 2
