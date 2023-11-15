@@ -21,6 +21,7 @@ TagManager:
   - LightsBasement
   - BugEnemy
   - Foot
+  - ZombieEnemy
   layers:
   - Default
   - TransparentFX
