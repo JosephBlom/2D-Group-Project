@@ -6,7 +6,7 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
 {
-
+    public Animator animator;
     public GameObject player;
     public float RayDistance;
     public float chaseSpeed = 2.0f;
@@ -45,6 +45,7 @@ public class EnemyMovement : MonoBehaviour
             RaycastHit2D _hit = Physics2D.Raycast(transform.position, Vector2.down, RayDistance, 3);
             if (_hit)
             {
+                animator.SetBool("Walking", true);
                 GetComponent<Rigidbody2D>().velocity = chaseDirection * chaseSpeed;
             }
            
@@ -56,12 +57,14 @@ public class EnemyMovement : MonoBehaviour
             {
                 //we've arrived home
                 home = true;
+                animator.SetBool("Walking", false);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             }
             else
             {
                 //go home
                 homeDirection.Normalize();
+                animator.SetBool("Walking", true);
                 GetComponent<Rigidbody2D>().velocity = homeDirection * chaseSpeed;
             }
         }
