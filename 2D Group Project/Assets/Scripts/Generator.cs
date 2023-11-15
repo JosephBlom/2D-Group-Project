@@ -8,6 +8,7 @@ public class Generator : MonoBehaviour
     public GameObject prefab;
     public GameObject[] lights;
     public GameObject[] spawnPoints;
+    bool spawned = false;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class Generator : MonoBehaviour
 
     void Update()
     {
-        if(on){
+        if(on && !spawned){
             foreach (GameObject i in lights){
                 i.SetActive(true);
             }
@@ -27,6 +28,7 @@ public class Generator : MonoBehaviour
             {
                 GameObject temp = Instantiate(prefab,i.transform.position, Quaternion.identity);
                 temp.GetComponent<EnemyMovement>().player = GameObject.FindGameObjectWithTag("Player");
+                spawned = true;
             }
         }
     }
