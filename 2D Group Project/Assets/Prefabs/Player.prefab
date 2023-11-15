@@ -833,7 +833,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000c162174e9779964777aa11cfb5319fa529ed15e77596158c61864c393dffb4fb
+  m_ApplyToSortingLayers: 00000000c162174e9779964777aa11cfb5319fa513f62d25339299ba29ed15e79b8bd4d561864c393dffb4fb7596158c633a9774
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1299,8 +1299,8 @@ MonoBehaviour:
   animator: {fileID: 2236653889090779242}
   Swimming: 0
   feet: {fileID: 2634913555213472900}
-  RightArm: {fileID: 5396925498550498610}
-  LeftArm: {fileID: 6339547565811011829}
+  RightArm: {fileID: 6339547565811011829}
+  LeftArm: {fileID: 5396925498550498610}
   DistanceFromFeet: 1
   grounded: 0
   sided: 0

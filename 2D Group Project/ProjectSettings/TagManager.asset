@@ -21,6 +21,7 @@ TagManager:
   - LightsBasement
   - BugEnemy
   - Foot
+  - ZombieEnemy
   layers:
   - Default
   - TransparentFX
@@ -85,11 +86,11 @@ TagManager:
   - name: Platforms
     uniqueID: 961316449
     locked: 0
-  - name: Toggle Door
-    uniqueID: 4222943037
-    locked: 0
   - name: Water
     uniqueID: 2350225013
+    locked: 0
+  - name: Toggle Door
+    uniqueID: 4222943037
     locked: 0
   - name: Particles
     uniqueID: 1956067939

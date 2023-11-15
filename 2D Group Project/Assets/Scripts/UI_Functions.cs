@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class UI_Functions : MonoBehaviour
 {
     public GameObject SettingsMenu;
+    public GameObject creds;
     void Start()
     {
         SettingsMenu.SetActive(false);
+        creds.SetActive(false);
     }
 
     public void Play()
@@ -18,6 +20,7 @@ public class UI_Functions : MonoBehaviour
 
     public void Settings()
     {
+        creds.SetActive(false);
         SettingsMenu.SetActive(true);
     }
 
@@ -29,10 +32,17 @@ public class UI_Functions : MonoBehaviour
     public void Back()
     {
         SettingsMenu.SetActive(false);
+        creds.SetActive(false);
     }
 
     public void SceneLoader(int SceneIndex)
     {
         SceneManager.LoadScene(SceneIndex);
+    }
+
+    public void Credits()
+    {
+        SettingsMenu.SetActive(false);
+        creds.SetActive(true);
     }
 }
