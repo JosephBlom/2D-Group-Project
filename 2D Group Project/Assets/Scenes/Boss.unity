@@ -118867,7 +118867,7 @@ MonoBehaviour:
   MeatBall: {fileID: 2353260201086972461, guid: 3939cca002c48164ab930d1726dcaf34, type: 3}
   Offset: {x: 0, y: -3, z: 0}
   Attack1: 0
-  attackDelay: 0.6
+  attackDelay: 1
   directionX: 0
   speed: 1
   slider: {fileID: 644819201}
@@ -118875,6 +118875,7 @@ MonoBehaviour:
   Name: Big Boss
   animator: {fileID: 1808973401}
   health: 300
+  meatBallSpeed: 18
 --- !u!61 &1942880686
 BoxCollider2D:
   m_ObjectHideFlags: 0
