@@ -28,7 +28,7 @@ public class Generator : MonoBehaviour
             {
                 GameObject temp = Instantiate(prefab,i.transform.position, Quaternion.identity);
                 temp.GetComponent<EnemyMovement>().player = GameObject.FindGameObjectWithTag("Player");
-                spawned = true;
+                spawned = true; 
             }
         }
     }

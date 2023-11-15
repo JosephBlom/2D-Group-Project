@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class MainBoss : MonoBehaviour
 {
+    public GameObject[] bossMoves;
     public Transform Player;
     public GameObject MeatBall;
     public Vector3 Offset;
@@ -20,6 +21,10 @@ public class MainBoss : MonoBehaviour
     public string Name;
     public Animator animator;
     public int health;
+    public int meatBallSpeed;
+    int i;
+    int chosenMove;
+    Vector3 shootDirection;
     void Start()
     {
         Player = GameObject.FindWithTag("Player").transform;
@@ -27,11 +32,17 @@ public class MainBoss : MonoBehaviour
         slider.maxValue = health;
         animator.Play("BlackBars");
         Player.GetComponent<PlayerShoot>().timer = 0.5f;
+        i = bossMoves.Length;
+        
     }
 
     void Attack()
     {
-        Instantiate(MeatBall, transform.position + Offset, Quaternion.identity);
+        shootDirection = Player.position - transform.position;
+        shootDirection.Normalize();
+        GameObject meatBall = Instantiate(MeatBall, transform.position + Offset, Quaternion.identity);
+        meatBall.GetComponent<Rigidbody2D>().velocity = shootDirection * meatBallSpeed;
+        StartCoroutine(move());
     }
 
     void Update()
@@ -47,9 +58,7 @@ public class MainBoss : MonoBehaviour
             nextTimeToFire = Time.time + attackDelay;
             Attack();
         }
-        directionX = Player.position.x - transform.position.x;
-
-        transform.position += new Vector3(directionX * Time.deltaTime * speed, 0, 0);
+        
         if (health <= 0)
         {
             Die();
@@ -62,5 +71,12 @@ public class MainBoss : MonoBehaviour
         Destroy(gameObject);
         int scene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(scene + 1);
+    }
+
+    IEnumerator move()
+    {
+        yield return new WaitForSeconds(10000);
+        chosenMove = Random.Range(1, i - 1);
+        transform.position = bossMoves[chosenMove].transform.position;
     }
 }
