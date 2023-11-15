@@ -65,15 +65,17 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
         if(sentences.Count == 0){
-            EndDialogue();
+            continueButton.SetActive(false);
+            StartCoroutine(EndDialogue());
         }
     }
 
-    void EndDialogue(){
-        continueButton.SetActive(false);
+    IEnumerator EndDialogue(){
         audioSource.Stop();
         audioSource.clip = Clip;
         audioSource.loop = false;
         audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        continueButton.SetActive(true);
     }
 }
