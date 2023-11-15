@@ -7,6 +7,7 @@ public class Meatball : MonoBehaviour
     public Transform boss;
     public int damage;
     public float speed;
+    public bool canHurt;
     private void Start()
     {
         boss = FindAnyObjectByType<MainBoss>().gameObject.transform;
@@ -25,11 +26,12 @@ public class Meatball : MonoBehaviour
             Vector3 Direction = Vector3.up * 10;
             if (boss != null)
             {
+                canHurt = true;
                 Direction = boss.position - transform.position;
             }
             GetComponent<Rigidbody2D>().velocity = Direction * speed;
         }
-        if (collision.CompareTag("Boss"))
+        if (collision.CompareTag("Boss") && canHurt)
         {
             boss.GetComponent<MainBoss>().health -= damage;
         }

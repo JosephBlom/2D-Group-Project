@@ -73,11 +73,19 @@ public class MainBoss : MonoBehaviour
         yield return new WaitForSeconds(nextTimeToFire);
         shootDirection = Player.position - transform.position;
         shootDirection.Normalize();
-        GameObject meatBall = Instantiate(MeatBall, transform.position + Offset, Quaternion.identity);
+        GameObject meatBall = Instantiate(MeatBall, transform.position, Quaternion.identity);
         meatBall.GetComponent<Rigidbody2D>().velocity = shootDirection * meatBallSpeed;
         yield return new WaitForSeconds(0.3f);
         chosenMove = Random.Range(1, i - 1);
         transform.position = bossMoves[chosenMove].transform.position;
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Lantern"))
+        {
+            health -= 30;
+        }
     }
 }

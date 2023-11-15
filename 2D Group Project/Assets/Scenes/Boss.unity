@@ -118752,7 +118752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550ada4990bbe6349bbba6082c4ed0e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 10
   Blood: {fileID: 324883297}
   LevScript: {fileID: 125944301}
   Health: {fileID: 644819201}
@@ -118867,7 +118867,7 @@ MonoBehaviour:
   MeatBall: {fileID: 2353260201086972461, guid: 3939cca002c48164ab930d1726dcaf34, type: 3}
   Offset: {x: 0, y: -3, z: 0}
   Attack1: 0
-  attackDelay: 1
+  attackDelay: 0.6
   directionX: 0
   speed: 1
   slider: {fileID: 644819201}
