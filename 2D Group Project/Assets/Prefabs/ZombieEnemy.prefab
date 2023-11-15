@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2806576636485719038}
   - component: {fileID: 833312578169952319}
   - component: {fileID: 4744637763469301390}
+  - component: {fileID: 8390459781078924621}
+  - component: {fileID: 9208276433659794985}
   m_Layer: 0
   m_Name: ZombieEnemy
   m_TagString: Untagged
@@ -72,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1164340685
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 760144452, guid: c93c271061177724a9c83f188250bdec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -142,3 +144,51 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &8390459781078924621
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3668670089049584969}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &9208276433659794985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3668670089049584969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697826c4a1cd63641a3421f6074490e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 4744637763469301390}
+  player: {fileID: 0}
+  RayDistance: 0
+  chaseSpeed: 3
+  chaseTriggerDistance: 7
+  paceDirection: {x: 0, y: 0}
+  paceDistance: 3
+  jumpSpeed: 0
+  jumping: 0
