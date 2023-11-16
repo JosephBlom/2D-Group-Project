@@ -12,7 +12,9 @@ public class Hint : MonoBehaviour
     void Update()
     {
         backgroundImage.sizeDelta = text.rectTransform.sizeDelta;
-        RaycastHit2D ray = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward);
+        var mousePos = Input.mousePosition;
+        mousePos.z = 10;
+        RaycastHit2D ray = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(mousePos), Vector3.forward);
         if (ray)
         {
             switch (ray.transform.tag)
