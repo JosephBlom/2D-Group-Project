@@ -165,3 +165,5 @@ MonoBehaviour:
   damage: 10
   speed: 5
   canHurt: 0
+  intervals: 3
+  SecondsFreezed: 0.1

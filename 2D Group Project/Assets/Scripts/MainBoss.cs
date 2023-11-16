@@ -34,6 +34,7 @@ public class MainBoss : MonoBehaviour
         slider.maxValue = health;
         animator.Play("BlackBars");
         Player.GetComponent<PlayerShoot>().timer = 0.5f;
+        Player.GetComponent<PlayerShoot>().bulletSpeed = 15f;
         i = bossMoves.Length;
         
     }
@@ -78,7 +79,6 @@ public class MainBoss : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         chosenMove = Random.Range(1, i - 1);
         transform.position = bossMoves[chosenMove].transform.position;
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

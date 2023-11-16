@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Update()
     {
-        if (Health != lastHealth)
+        if (Health < lastHealth)
         {
             lastHealth = Health;
             Blood.Play();
