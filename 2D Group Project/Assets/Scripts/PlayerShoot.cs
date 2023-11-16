@@ -39,6 +39,7 @@ public class PlayerShoot : MonoBehaviour
         {
             fireTime = Time.time + timer;
             animator.Play("Throw");
+            // idk why this is here but if i get rid of it shooting stops working.
             Invoke("SummonBullet", 0.1666666f);
         }
     }

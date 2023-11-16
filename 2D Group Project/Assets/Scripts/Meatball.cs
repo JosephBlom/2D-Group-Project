@@ -8,6 +8,8 @@ public class Meatball : MonoBehaviour
     public int damage;
     public float speed;
     public bool canHurt;
+    public int intervals;
+    public float SecondsFreezed;
     private void Start()
     {
         boss = FindAnyObjectByType<MainBoss>().gameObject.transform;
@@ -22,7 +24,6 @@ public class Meatball : MonoBehaviour
         }
         if (collision.CompareTag("Lantern"))
         {
-            StartCoroutine(freezeFrame());
             Vector3 Direction = Vector3.up * 10;
             if (boss != null)
             {
@@ -35,46 +36,5 @@ public class Meatball : MonoBehaviour
         {
             boss.GetComponent<MainBoss>().health -= damage;
         }
-    }
-
-    IEnumerator freezeFrame()
-    {
-        Time.timeScale = 0.1f;
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 0.15f;
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 0.2f;
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 0.25f;
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 0.3f; 
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 0.35f;
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 0.4f;
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 0.45f;
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 0.5f;
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 0.55f;
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 0.6f;
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 0.65f;
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 0.7f;
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 0.75f;
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 0.8f;
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 0.85f;
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 0.9f;
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 0.95f;
-        yield return new WaitForSecondsRealtime(0.025f);
-        Time.timeScale = 1;
     }
 }
