@@ -8,6 +8,6 @@ public class WidenCamera : MonoBehaviour
     public Camera mainCamera;
     void OnTriggerEnter2D(Collider2D collision)
     {
-        mainCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize =85f;
+        mainCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView = 85f;
     }
 }
