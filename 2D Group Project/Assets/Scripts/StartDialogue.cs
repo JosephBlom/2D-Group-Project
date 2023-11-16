@@ -11,7 +11,6 @@ public class StartDialogue : MonoBehaviour
         StartCoroutine(startDialogue());
     }
     private IEnumerator startDialogue(){
-        Debug.Log("");
         yield return new WaitForSeconds(waitSeconds);
         dialogueTrigger.GetComponent<DialogueTrigger>().TriggerDialogue();
     }
