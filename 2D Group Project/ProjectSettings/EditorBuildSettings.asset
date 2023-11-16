@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/CarCrash.unity
+    guid: 6406d682c6458c546b3b16a8b08285e0
+  - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 67e59328fcc4e5448abb2264484f804e
   - enabled: 1
@@ -24,6 +27,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Boss.unity
     guid: 5e9a5d79532443647927ac4c5b97135d
   - enabled: 1
-    path: Assets/Scenes/PauseMenu.unity
-    guid: ec3409054e14d064a8572a9e969221a3
+    path: Assets/Scenes/WinScreen.unity
+    guid: 7dfbf73e294ef4446b47f360054a59a2
   m_configObjects: {}
