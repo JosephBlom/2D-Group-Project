@@ -8,6 +8,7 @@ using UnityEngine.Rendering.Universal;
 public class CandleLogic : MonoBehaviour
 {
     public Candle[] Candles;
+    public GameObject door;
     public bool complete = true;
     void Start()
     {
@@ -29,6 +30,7 @@ public class CandleLogic : MonoBehaviour
                 allLit = false;
             }
         }
+        door.SetActive(!complete);
         if (!complete && allLit)
         {
             for(int i = 0;i < Candles.Length; i++)
