@@ -45,7 +45,9 @@ public class PlayerShoot : MonoBehaviour
 
     void SummonBullet()
     {
-        Vector3 shootDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        var mousepos = Input.mousePosition;
+        mousepos.z = 10;
+        Vector3 shootDirection = Camera.main.ScreenToWorldPoint(mousepos) - transform.position;
         shootDirection.z = 0f;
         GameObject bullet = Instantiate(prefab, transform.position, Quaternion.identity);
         bullet.GetComponent<Rigidbody2D>().velocity = shootDirection.normalized * (bulletSpeed*(chargeTime + 1));
