@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class MainBoss : MonoBehaviour
 {
+    PlayerHealth playerHealth;
     public GameObject[] bossMoves;
     public Transform Player;
     public GameObject MeatBall;
@@ -29,6 +30,7 @@ public class MainBoss : MonoBehaviour
     float timer;
     void Start() 
     {
+        playerHealth = GetComponent<PlayerHealth>();
         Player = GameObject.FindWithTag("Player").transform;
         slidertext.text = name;
         slider.maxValue = health;
@@ -87,5 +89,10 @@ public class MainBoss : MonoBehaviour
         {
             health -= 30;
         }
+        else if (collision.CompareTag("Player"))
+        {
+            playerHealth.Health = 0;
+        }
     }
+
 }
