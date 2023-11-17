@@ -26,6 +26,7 @@ public class EnemyMovement : MonoBehaviour
         gravity = GetComponent<Rigidbody2D>().gravityScale;
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         startPosition = transform.position;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
