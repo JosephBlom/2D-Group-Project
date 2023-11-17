@@ -248,7 +248,7 @@ MonoBehaviour:
   animator: {fileID: 7181324719781191143}
   player: {fileID: 0}
   RayDistance: 0
-  chaseSpeed: 5
+  chaseSpeed: 2.5
   chaseTriggerDistance: 7
   startPosition: {x: 0, y: 0, z: 0}
   home: 1
