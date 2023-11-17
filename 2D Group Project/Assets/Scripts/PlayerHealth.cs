@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class PlayerHealth : MonoBehaviour
 {
+    static public int DeathCount = 0;
     public int Health;
     public int lastHealth;
     public int MaxHealth;
@@ -55,6 +57,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
+        DeathCount++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
