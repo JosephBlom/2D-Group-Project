@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 8805708}
   - component: {fileID: 8805711}
   - component: {fileID: 8805710}
-  - component: {fileID: 8805709}
   m_Layer: 5
   m_Name: Time
   m_TagString: Untagged
@@ -161,18 +160,6 @@ RectTransform:
   m_AnchoredPosition: {x: 108, y: -25.00003}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8805709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8805707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58a3bba5ee91400499a74d9015ad1097, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8805710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1393,9 +1380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3122db857bc99df45a6fee13985c40db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secrets: {fileID: 0}
-  score: {fileID: 0}
-  congrats: {fileID: 0}
+  secrets: {fileID: 8805710}
+  score: {fileID: 1251678269}
+  congrats: {fileID: 1639186131}
 --- !u!4 &814052921
 Transform:
   m_ObjectHideFlags: 0
@@ -1689,7 +1676,6 @@ GameObject:
   - component: {fileID: 1251678267}
   - component: {fileID: 1251678270}
   - component: {fileID: 1251678269}
-  - component: {fileID: 1251678268}
   m_Layer: 5
   m_Name: Time
   m_TagString: Untagged
@@ -1716,18 +1702,6 @@ RectTransform:
   m_AnchoredPosition: {x: 108, y: -25.00003}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1251678268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251678266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58a3bba5ee91400499a74d9015ad1097, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1251678269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2276,7 +2250,6 @@ GameObject:
   - component: {fileID: 1639186129}
   - component: {fileID: 1639186132}
   - component: {fileID: 1639186131}
-  - component: {fileID: 1639186130}
   m_Layer: 5
   m_Name: Congrats
   m_TagString: Untagged
@@ -2303,18 +2276,6 @@ RectTransform:
   m_AnchoredPosition: {x: 670, y: -14}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1639186130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1639186128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58a3bba5ee91400499a74d9015ad1097, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1639186131
 MonoBehaviour:
   m_ObjectHideFlags: 0
