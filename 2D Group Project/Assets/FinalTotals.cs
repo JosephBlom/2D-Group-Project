@@ -25,7 +25,7 @@ public class FinalTotals : MonoBehaviour
         }
         float scoreTotal = (secretsCount * x)/deathCount;
         score.text = "Total Score: " + scoreTotal.ToString("0");
-        secrets.text = "Secrets Collected: " + secretsCount.ToString();
+        secrets.text = "Secrets Collected: " + secretsCount.ToString() + "/8";
         deaths.text = "Death Count: " + deathCount.ToString();
     }
 
