@@ -16,7 +16,7 @@ public class ElevatorScript : MonoBehaviour
     void Start()
     {
         ActiveLevel = transform;
-        rb.drag = 1;
+        rb.drag = 10;
         rb.mass = 100;
         rb.gravityScale = 0;
         rb.freezeRotation = true;
@@ -24,7 +24,7 @@ public class ElevatorScript : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !CanGoUp)
         {
             ActiveLevel = Levels[Level];
 
@@ -50,6 +50,22 @@ public class ElevatorScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow) && Level > 0)
         {
             Level--;
+        }
+
+        if (CanGoUp)
+        {
+            ActiveLevel = Levels[Level];
+
+            Vector3 Direction = Vector3.up * (ActiveLevel.position.y - transform.position.y);
+            if (Vector3.Distance(Vector3.up * ActiveLevel.transform.position.y, Vector3.up * transform.position.y) < 0.1f)
+            {
+                transform.position = new Vector3(transform.position.x, ActiveLevel.transform.position.y, transform.position.z);
+            }
+            else
+            {
+                rb.velocity = Direction.normalized * speed;
+
+            }
         }
     }
 }
