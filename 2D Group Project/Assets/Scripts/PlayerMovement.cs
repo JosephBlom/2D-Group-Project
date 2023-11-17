@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     public bool hasKey = false;
     public GameObject spawnObject;
     public ElevatorScript elevatorScript;
-    static int secretCount = 0; 
+    static public int secretCount = 0; 
     public GameObject Generator;
     SpriteRenderer spriteRenderer;
     Generator generator;
