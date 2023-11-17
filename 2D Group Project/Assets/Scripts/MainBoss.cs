@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class MainBoss : MonoBehaviour
 {
-    PlayerHealth playerHealth
+    PlayerHealth playerHealth;
     public GameObject[] bossMoves;
     public Transform Player;
     public GameObject MeatBall;
