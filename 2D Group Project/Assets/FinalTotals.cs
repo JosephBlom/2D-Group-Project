@@ -9,13 +9,11 @@ public class FinalTotals : MonoBehaviour
     public TextMeshProUGUI secrets;
     public TextMeshProUGUI score;
     public TextMeshProUGUI congrats;
-    PlayerMovement playerMovement;
     int secretsCount;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerMovement.GetComponent<PlayerMovement>();
         secretsCount = PlayerMovement.secretCount;
         float x = 1200 - Time.time;
         if (x < 0)
@@ -23,8 +21,8 @@ public class FinalTotals : MonoBehaviour
             x = 1;
         }
         float scoreTotal = secretsCount * x;
-        score.text = scoreTotal.ToString("0");
-        secrets.text = secretsCount.ToString();
+        score.text = "Total Score: " + scoreTotal.ToString("0");
+        secrets.text = "Secrets Collected: " + secretsCount.ToString();
         if(scoreTotal <= secretsCount)
         {
             congrats.text = "How Did This Take You Over 20 Minutes?";
